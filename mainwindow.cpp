@@ -41,3 +41,8 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+MainWindow::drawPlaneXY()
+{
+
+}

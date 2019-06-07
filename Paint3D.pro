@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     putellipsoid.cpp \
     putsphere.cpp \
     putvoxel.cpp \
-    sculptor.cpp
+    sculptor.cpp \
+    plotterxy.cpp
 
 HEADERS  += mainwindow.h \
     cutbox.h \
@@ -35,6 +36,7 @@ HEADERS  += mainwindow.h \
     putellipsoid.h \
     putsphere.h \
     putvoxel.h \
-    sculptor.h
+    sculptor.h \
+    plotterxy.h
 
 FORMS    += mainwindow.ui
