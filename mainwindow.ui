@@ -14,676 +14,652 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>130</y>
-      <width>951</width>
-      <height>391</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="10,5,85">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_6">
-       <item>
-        <widget class="QPushButton" name="pushButton">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>120</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Draw Voxel</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>120</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Erase Voxel</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>120</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Draw Rectangle</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_4">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>120</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Erase Rectangle</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_5">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>120</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Draw Sphere</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_6">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>120</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Erase Sphere</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_7">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>120</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Draw Ellipsoid</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_8">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>120</height>
-          </size>
-         </property>
-         <property name="baseSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Erase Ellipsoid</string>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>41</width>
-           <height>41</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="Line" name="line">
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="lineWidth">
-        <number>3</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_3" stretch="5,95">
-           <item>
-            <widget class="QLabel" name="label_4">
-             <property name="text">
-              <string>3D</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0">
-             <property name="spacing">
-              <number>6</number>
-             </property>
-             <item>
-              <widget class="QWidget" name="widget_9" native="true">
-               <zorder>line</zorder>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="Line" name="line_3">
-           <property name="frameShadow">
-            <enum>QFrame::Plain</enum>
+   <layout class="QVBoxLayout" name="verticalLayout_12">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_11" stretch="20,5,75">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="30,15,15,20">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>378</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="title">
+           <string>Rectangle</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="layoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>151</width>
+             <height>81</height>
+            </rect>
            </property>
-           <property name="lineWidth">
-            <number>2</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QLabel" name="label_7">
+                <property name="text">
+                 <string>Size X:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>Size Y:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>Size Z:</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_7">
+              <item>
+               <widget class="QLineEdit" name="lineEdit"/>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_2"/>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_3"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
-         </item>
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
-           <item>
-            <widget class="QLabel" name="label_3">
-             <property name="text">
-              <string>XY</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0">
-             <property name="spacing">
-              <number>6</number>
-             </property>
-             <item>
-              <widget class="QWidget" name="widget_8" native="true"/>
-             </item>
-             <item>
-              <widget class="QSlider" name="verticalSlider_8">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="Line" name="line_4">
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <property name="lineWidth">
-          <number>2</number>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout">
-           <item>
-            <widget class="QLabel" name="label_2">
-             <property name="text">
-              <string>XZ</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0">
-             <property name="spacing">
-              <number>6</number>
-             </property>
-             <item>
-              <widget class="QWidget" name="widget_7" native="true"/>
-             </item>
-             <item>
-              <widget class="QSlider" name="verticalSlider_7">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="Line" name="line_5">
-           <property name="frameShadow">
-            <enum>QFrame::Plain</enum>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Sphere</string>
+          </property>
+          <widget class="QWidget" name="layoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>50</y>
+             <width>151</width>
+             <height>22</height>
+            </rect>
            </property>
-           <property name="lineWidth">
-            <number>2</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>Radius:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="lineEdit_7"/>
+            </item>
+           </layout>
           </widget>
-         </item>
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_4">
-           <item>
-            <widget class="QLabel" name="label_5">
-             <property name="text">
-              <string>YZ</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0">
-             <property name="spacing">
-              <number>6</number>
-             </property>
-             <item>
-              <widget class="QWidget" name="widget_10" native="true"/>
-             </item>
-             <item>
-              <widget class="QSlider" name="verticalSlider_10">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>10</y>
-      <width>951</width>
-      <height>111</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="30,20,20,30">
-     <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>378</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="groupBox">
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="autoFillBackground">
-        <bool>false</bool>
-       </property>
-       <property name="title">
-        <string>Rectangle</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-       </property>
-       <property name="flat">
-        <bool>false</bool>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-       <widget class="QWidget" name="">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>151</width>
-          <height>81</height>
-         </rect>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_8">
-           <item>
-            <widget class="QLabel" name="label_7">
-             <property name="text">
-              <string>Size X:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_8">
-             <property name="text">
-              <string>Size Y:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_9">
-             <property name="text">
-              <string>Size Z:</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_7">
-           <item>
-            <widget class="QLineEdit" name="lineEdit"/>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_2"/>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_3"/>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="groupBox_2">
-       <property name="title">
-        <string>Sphere</string>
-       </property>
-       <widget class="QWidget" name="">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>151</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_9">
-         <item>
-          <widget class="QLabel" name="label_13">
-           <property name="text">
-            <string>Radius:</string>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>Ellipsoid</string>
+          </property>
+          <widget class="QWidget" name="layoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>190</width>
+             <height>81</height>
+            </rect>
            </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <item>
+               <widget class="QLabel" name="label_16">
+                <property name="text">
+                 <string>Radius X:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_18">
+                <property name="text">
+                 <string>Radius Y:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_19">
+                <property name="text">
+                 <string>Radius Z:</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_9">
+              <item>
+               <widget class="QLineEdit" name="lineEdit_10"/>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_11"/>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_8"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_7"/>
-         </item>
-        </layout>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="groupBox_3">
-       <property name="title">
-        <string>Ellipsoid</string>
-       </property>
-       <widget class="QWidget" name="">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>190</width>
-          <height>81</height>
-         </rect>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line_2">
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_10">
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_10">
-           <item>
-            <widget class="QLabel" name="label_16">
-             <property name="text">
-              <string>Radius X:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_18">
-             <property name="text">
-              <string>Radius Y:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_19">
-             <property name="text">
-              <string>Radius Z:</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_9">
-           <item>
-            <widget class="QLineEdit" name="lineEdit_10"/>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_11"/>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_8"/>
-           </item>
-          </layout>
-         </item>
-        </layout>
+        <property name="lineWidth">
+         <number>3</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
        </widget>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <zorder>line</zorder>
-   <zorder>line_3</zorder>
-   <zorder>line_4</zorder>
-   <zorder>widget_4</zorder>
-   <zorder>verticalSlider_4</zorder>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="10,5,85">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Draw Voxel</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Erase Voxel</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Draw Rectangle</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Erase Rectangle</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_5">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Draw Sphere</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_6">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Erase Sphere</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_7">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Draw Ellipsoid</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_8">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Erase Ellipsoid</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>41</width>
+              <height>41</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line">
+          <property name="frameShadow">
+           <enum>QFrame::Sunken</enum>
+          </property>
+          <property name="lineWidth">
+           <number>3</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_3" stretch="5,95">
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>3D</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0">
+                <property name="spacing">
+                 <number>6</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="widget_9" native="true"/>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_3">
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="lineWidth">
+               <number>2</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>XY</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0">
+                <property name="spacing">
+                 <number>6</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="widget_8" native="true"/>
+                </item>
+                <item>
+                 <widget class="QSlider" name="verticalSlider_8">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="line_4">
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="lineWidth">
+             <number>2</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>XZ</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0">
+                <property name="spacing">
+                 <number>6</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="widget_7" native="true"/>
+                </item>
+                <item>
+                 <widget class="QSlider" name="verticalSlider_7">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="Line" name="line_5">
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="lineWidth">
+               <number>2</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QLabel" name="label_5">
+                <property name="text">
+                 <string>YZ</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0">
+                <property name="spacing">
+                 <number>6</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="widget_10" native="true"/>
+                </item>
+                <item>
+                 <widget class="QSlider" name="verticalSlider_10">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
    <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget_3</zorder>
-   <zorder>label_3</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label</zorder>
    <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget_2</zorder>
-   <zorder>layoutWidget_4</zorder>
-   <zorder>horizontalSpacer</zorder>
-   <zorder>line_5</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
-   <zorder>pushButton_4</zorder>
-   <zorder>pushButton_5</zorder>
-   <zorder>pushButton_6</zorder>
-   <zorder>pushButton_7</zorder>
-   <zorder>pushButton_8</zorder>
-   <zorder>label_16</zorder>
-   <zorder></zorder>
-   <zorder>horizontalSpacer</zorder>
-   <zorder>groupBox_3</zorder>
-   <zorder>groupBox_2</zorder>
-   <zorder>groupBox</zorder>
+   <zorder>line_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -694,13 +670,19 @@
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
    <addaction name="actionDim"/>
   </widget>
