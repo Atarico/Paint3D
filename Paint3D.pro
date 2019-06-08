@@ -19,12 +19,12 @@ SOURCES += main.cpp\
     cutsphere.cpp \
     cutvoxel.cpp \
     geometricfigure.cpp \
+    plotter.cpp \
     putbox.cpp \
     putellipsoid.cpp \
     putsphere.cpp \
     putvoxel.cpp \
-    sculptor.cpp \
-    plotterxy.cpp
+    sculptor.cpp
 
 HEADERS  += mainwindow.h \
     cutbox.h \
@@ -32,11 +32,11 @@ HEADERS  += mainwindow.h \
     cutsphere.h \
     cutvoxel.h \
     geometricfigure.h \
+    plotter.h \
     putbox.h \
     putellipsoid.h \
     putsphere.h \
     putvoxel.h \
-    sculptor.h \
-    plotterxy.h
+    sculptor.h
 
 FORMS    += mainwindow.ui

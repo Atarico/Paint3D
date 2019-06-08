@@ -14,6 +14,10 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void drawPlaneXY();
+
+private slots:
+    void on_plotter_XY_objectNameChanged(const QString &objectName);
 
 private:
     Ui::MainWindow *ui;

@@ -58,7 +58,7 @@
              <x>10</x>
              <y>20</y>
              <width>151</width>
-             <height>81</height>
+             <height>91</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -115,7 +115,7 @@
              <x>10</x>
              <y>50</y>
              <width>151</width>
-             <height>22</height>
+             <height>27</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_9">
@@ -144,7 +144,7 @@
              <x>10</x>
              <y>20</y>
              <width>190</width>
-             <height>81</height>
+             <height>91</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_10">
@@ -515,7 +515,7 @@
                  <number>6</number>
                 </property>
                 <item>
-                 <widget class="QWidget" name="widget_3D" native="true"/>
+                 <widget class="QWidget" name="plotter_3D" native="true"/>
                 </item>
                </layout>
               </item>
@@ -549,10 +549,10 @@
                  <number>6</number>
                 </property>
                 <item>
-                 <widget class="QWidget" name="widget_XY" native="true"/>
+                 <widget class="Plotter" name="plotter_XY" native="true"/>
                 </item>
                 <item>
-                 <widget class="QSlider" name="verticalSlider_8">
+                 <widget class="QSlider" name="verticalSlider_XY">
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
                   </property>
@@ -594,7 +594,7 @@
                  <number>6</number>
                 </property>
                 <item>
-                 <widget class="QWidget" name="widget_XZ" native="true"/>
+                 <widget class="QWidget" name="plotter_XZ" native="true"/>
                 </item>
                 <item>
                  <widget class="QSlider" name="verticalSlider_7">
@@ -635,7 +635,7 @@
                  <number>6</number>
                 </property>
                 <item>
-                 <widget class="QWidget" name="widget_YZ" native="true"/>
+                 <widget class="QWidget" name="plotter_YZ" native="true"/>
                 </item>
                 <item>
                  <widget class="QSlider" name="verticalSlider_10">
@@ -664,7 +664,7 @@
      <x>0</x>
      <y>0</y>
      <width>1039</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -691,6 +691,17 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Plotter</class>
+   <extends>QWidget</extends>
+   <header>plotter.h</header>
+   <container>1</container>
+   <slots>
+    <signal>paintMatrix(int)</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
