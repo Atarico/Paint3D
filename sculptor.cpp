@@ -135,13 +135,61 @@ void Sculptor::cutVoxel(int x, int y, int z)
     }
 }
 
-vector<vector<Voxel>> Sculptor::planeXY(int z0)
+/*!
+ * Retorna uma matriz 2D (vetor de vetores) de Voxels do plano XY.
+ * \param zFactor um fator de profundidade que varia de 0 a 1. Permite o retorno de diferentes planos desde o plano zero até o plano nz-1.
+ */
+vector<vector<Voxel>> Sculptor::planeXY(float zFactor)
 {
+    int z0 = int(nz*zFactor);
+
     vector<vector<Voxel>> plane;
     vector<Voxel> line;
     for(int i = 0; i<nx; i++){
         for(int j = 0; j<ny; j++){
             line.push_back(v[i][j][z0]);
+        }
+        plane.push_back(line);
+        line.clear();
+    }
+
+    return plane;
+}
+
+/*!
+ * Retorna uma matriz 2D (vetor de vetores) de Voxels do plano XZ.
+ * \param yFactor um fator de profundidade que varia de 0 a 1. Permite o retorno de diferentes planos desde o plano zero até o plano ny-1.
+ */
+vector<vector<Voxel>> Sculptor::planeXZ(float yFactor)
+{
+    int y0 = int(nz*yFactor);
+
+    vector<vector<Voxel>> plane;
+    vector<Voxel> line;
+    for(int i = 0; i<nx; i++){
+        for(int k = 0; k<nz; k++){
+            line.push_back(v[i][y0][k]);
+        }
+        plane.push_back(line);
+        line.clear();
+    }
+
+    return plane;
+}
+
+/*!
+ * Retorna uma matriz 2D (vetor de vetores) de Voxels do plano YZ.
+ * \param xFactor um fator de profundidade que varia de 0 a 1. Permite o retorno de diferentes planos desde o plano zero até o plano nx-1.
+ */
+vector<vector<Voxel>> Sculptor::planeYZ(float xFactor)
+{
+    int x0 = int(nz*xFactor);
+
+    vector<vector<Voxel>> plane;
+    vector<Voxel> line;
+    for(int j = 0; j<ny; j++){
+        for(int k = 0; k<nz; k++){
+            line.push_back(v[x0][j][k]);
         }
         plane.push_back(line);
         line.clear();

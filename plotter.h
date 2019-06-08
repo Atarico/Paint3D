@@ -5,6 +5,8 @@
 #include <vector>
 #include "sculptor.h"
 
+enum { XY, XZ, YZ };
+
 class Plotter : public QWidget
 {
     Q_OBJECT
@@ -13,6 +15,7 @@ private:
     vector<vector<Voxel>> planeXY;
     vector<vector<Voxel>> planeXZ;
     vector<vector<Voxel>> planeYZ;
+    Sculptor *sculptor;
 
 public:
     explicit Plotter(QWidget *parent = nullptr);
@@ -20,7 +23,7 @@ public:
     void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);
     void paintEvent(QPaintEvent *event);
-    void paintMatrix(int depth);
+    void paintMatrix(int plane, int depth);
 
 signals:
     void moveX(int);

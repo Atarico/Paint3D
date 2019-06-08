@@ -7,12 +7,25 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-//    connect(ui->verticalSlider_XY,
-//            SIGNAL(valueChanged(int)),
-//            ui->plotter_XY,
-//            SLOT(paintMatrix((int))));
+    ui->plotter_XY->paintMatrix( XY, 50);
+//    ui->plotter_XZ->paintMatrix( XZ, 50);
+//    ui->plotter_YZ->paintMatrix( YZ, 50);
 
-    ui->plotter_XY->paintMatrix(5);
+    connect(ui->verticalSlider_XY,
+            SIGNAL(valueChanged(int)),
+            this,
+            SLOT(drawPlane()));
+
+//    connect(ui->verticalSlider_XZ,
+//            SIGNAL(valueChanged(int)),
+//            this,
+//            SLOT(drawPlane()));
+
+//    connect(ui->verticalSlider_YZ,
+//            SIGNAL(valueChanged(int)),
+//            this,
+//            SLOT(drawPlane()));
+
 }
 
 MainWindow::~MainWindow()
@@ -20,7 +33,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::drawPlaneXY()
+void MainWindow::drawPlane()
 {
-    std::printf("fuck my life");
+    ui->plotter_XY->paintMatrix(XY, ui->verticalSlider_XY->value());
+//    ui->plotter_XZ->paintMatrix(XZ, ui->verticalSlider_XZ->value());
+//    ui->plotter_YZ->paintMatrix(YZ, ui->verticalSlider_YZ->value());
 }

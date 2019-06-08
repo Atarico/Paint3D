@@ -553,6 +553,15 @@
                 </item>
                 <item>
                  <widget class="QSlider" name="verticalSlider_XY">
+                  <property name="maximum">
+                   <number>99</number>
+                  </property>
+                  <property name="value">
+                   <number>50</number>
+                  </property>
+                  <property name="sliderPosition">
+                   <number>50</number>
+                  </property>
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
                   </property>
@@ -597,7 +606,13 @@
                  <widget class="QWidget" name="plotter_XZ" native="true"/>
                 </item>
                 <item>
-                 <widget class="QSlider" name="verticalSlider_7">
+                 <widget class="QSlider" name="verticalSlider_XZ">
+                  <property name="maximum">
+                   <number>99</number>
+                  </property>
+                  <property name="value">
+                   <number>50</number>
+                  </property>
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
                   </property>
@@ -638,7 +653,13 @@
                  <widget class="QWidget" name="plotter_YZ" native="true"/>
                 </item>
                 <item>
-                 <widget class="QSlider" name="verticalSlider_10">
+                 <widget class="QSlider" name="verticalSlider_YZ">
+                  <property name="maximum">
+                   <number>99</number>
+                  </property>
+                  <property name="sliderPosition">
+                   <number>50</number>
+                  </property>
                   <property name="orientation">
                    <enum>Qt::Vertical</enum>
                   </property>
