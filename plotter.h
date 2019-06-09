@@ -12,9 +12,7 @@ class Plotter : public QWidget
     Q_OBJECT
 
 private:
-    vector<vector<Voxel>> planeXY;
-    vector<vector<Voxel>> planeXZ;
-    vector<vector<Voxel>> planeYZ;
+    vector<vector<Voxel>> plane2D;
     Sculptor *sculptor;
 
 public:

@@ -27,7 +27,7 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
     figs.push_back(new PutSphere(5, 5, 5, 3, 0.8, 0.1, 0.1, 1));
     figs.push_back(new PutSphere(10, 10, 10, 5, 0.1, 0.1, 0.9, 0.1));
     figs.push_back(new PutSphere(0, 10, 10, 5, 0.1, 0.1, 0.9, 0.1));
-    figs.push_back(new PutSphere(10, 0, 10, 5, 0.1, 0.1, 0.9, 0.1));
+    figs.push_back(new PutSphere(10, 0, 10, 5, 0.1, 0.9, 0.1, 0.1));
     figs.push_back(new PutSphere(0, 0, 10, 5, 0.1, 0.1, 0.9, 0.1));
 
     for(int i = 0; i< figs.size(); i++){
@@ -55,13 +55,13 @@ void Plotter::paintMatrix(int plane, int depth){
     float depthNorm = float(depth)/100;
 
     if(plane == XY){
-        planeXY = sculptor->planeXY(depthNorm);
+        plane2D = sculptor->planeXY(depthNorm);
     }
     else if(plane == XZ){
-        planeXZ = sculptor->planeXZ(depthNorm);
+        plane2D = sculptor->planeXZ(depthNorm);
     }
     else if(plane == YZ){
-        planeYZ = sculptor->planeYZ(depthNorm);
+        plane2D = sculptor->planeYZ(depthNorm);
     }
 
     repaint();
@@ -88,9 +88,9 @@ void Plotter::paintEvent(QPaintEvent *event)
 
     p.drawRect(0,0,width(),height());
 
-    //PAINTING XY MATRIX
-    int sizeH = int(planeXY.size()); //horizontal size in pixels of our plotter
-    int sizeV = int(planeXY[0].size()); //vertical size in pixels of our plotter
+    //PAINTING 2D MATRIX
+    int sizeH = int(plane2D.size()); //horizontal size in pixels of our plotter
+    int sizeV = int(plane2D[0].size()); //vertical size in pixels of our plotter
     float normSizeH = width()/sizeH;
     float normSizeV = height()/sizeV;
 
@@ -98,8 +98,8 @@ void Plotter::paintEvent(QPaintEvent *event)
     {
         for(int j=0; j<sizeV; j++)
         {
-            if(planeXY[i][j].isOn){
-                brush.setColor(QColor(planeXY[i][j].r*255,planeXY[i][j].g*255,planeXY[i][j].b*255));
+            if(plane2D[i][j].isOn){
+                brush.setColor(QColor(plane2D[i][j].r*255,plane2D[i][j].g*255,plane2D[i][j].b*255));
                 brush.setStyle(Qt::SolidPattern);
                 p.setBrush(brush);
                 p.drawRect(i*normSizeH, j*normSizeV,
@@ -115,62 +115,4 @@ void Plotter::paintEvent(QPaintEvent *event)
 
         }
     }
-
-
-//    //PAINTING XZ MATRIX
-//    sizeH = int(planeXZ.size());
-//    sizeV = int(planeXZ[0].size());
-//    normSizeH = width()/sizeH;
-//    normSizeV = height()/sizeV;
-
-//    for(int i=0; i<sizeH; i++)
-//    {
-//        for(int j=0; j<sizeV; j++)
-//        {
-//            if(planeXZ[i][j].isOn){
-//                brush.setColor(QColor(planeXZ[i][j].r*255,planeXZ[i][j].g*255,planeXZ[i][j].b*255));
-//                brush.setStyle(Qt::SolidPattern);
-//                p.setBrush(brush);
-//                p.drawRect(i*normSizeH, j*normSizeV,
-//                           i*normSizeH + normSizeH, j*normSizeV + normSizeV);
-//            }
-//            else{
-//                brush.setColor(QColor(255,255,255));
-//                brush.setStyle(Qt::SolidPattern);
-//                p.setBrush(brush);
-//                p.drawRect(i*normSizeH, j*normSizeV,
-//                           i*normSizeH + normSizeH, j*normSizeV + normSizeV);
-//            }
-
-//        }
-//    }
-
-
-//    //PAINTING YZ MATRIX
-//    sizeH = int(planeYZ.size());
-//    sizeV = int(planeYZ[0].size());
-//    normSizeH = width()/sizeH;
-//    normSizeV = height()/sizeV;
-
-//    for(int i=0; i<sizeH; i++)
-//    {
-//        for(int j=0; j<sizeV; j++)
-//        {
-//            if(planeYZ[i][j].isOn){
-//                brush.setColor(QColor(planeYZ[i][j].r*255,planeYZ[i][j].g*255,planeYZ[i][j].b*255));
-//                brush.setStyle(Qt::SolidPattern);
-//                p.setBrush(brush);
-//                p.drawRect(i*normSizeH, j*normSizeV,
-//                           i*normSizeH + normSizeH, j*normSizeV + normSizeV);
-//            }
-//            else{
-//                brush.setColor(QColor(255,255,255));
-//                brush.setStyle(Qt::SolidPattern);
-//                p.setBrush(brush);
-//                p.drawRect(i*normSizeH, j*normSizeV,
-//                           i*normSizeH + normSizeH, j*normSizeV + normSizeV);
-//            }
-
-//        }
-//    }
 }
