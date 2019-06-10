@@ -6,17 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1039</width>
-    <height>649</height>
+    <width>1002</width>
+    <height>706</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout_12">
+   <layout class="QVBoxLayout" name="verticalLayout_23">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_11" stretch="20,5,75">
+     <layout class="QVBoxLayout" name="verticalLayout_22" stretch="20,5,75">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="30,15,15,20">
         <item>
@@ -206,7 +206,7 @@
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="10,5,85">
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
@@ -497,179 +497,273 @@
          </widget>
         </item>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_5">
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
+         <layout class="QGridLayout" name="gridLayout" rowstretch="50,0,0,50" columnstretch="50,0,50">
+          <item row="3" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="5,90,5">
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_3" stretch="5,95">
-              <item>
-               <widget class="QLabel" name="label_4">
-                <property name="text">
-                 <string>3D</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0">
-                <property name="spacing">
-                 <number>6</number>
-                </property>
-                <item>
-                 <widget class="QWidget" name="plotter_3D" native="true"/>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <widget class="Line" name="line_3">
-              <property name="frameShadow">
-               <enum>QFrame::Plain</enum>
-              </property>
-              <property name="lineWidth">
-               <number>2</number>
-              </property>
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
-              <item>
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>XY</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0">
-                <property name="spacing">
-                 <number>6</number>
-                </property>
-                <item>
-                 <widget class="Plotter" name="plotter_XY" native="true"/>
-                </item>
-                <item>
-                 <widget class="QSlider" name="verticalSlider_XY">
-                  <property name="maximum">
-                   <number>99</number>
-                  </property>
-                  <property name="value">
-                   <number>50</number>
-                  </property>
-                  <property name="sliderPosition">
-                   <number>50</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="Line" name="line_4">
-            <property name="frameShadow">
-             <enum>QFrame::Plain</enum>
-            </property>
-            <property name="lineWidth">
-             <number>2</number>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout">
+             <layout class="QVBoxLayout" name="verticalLayout" stretch="10,90">
               <item>
                <widget class="QLabel" name="label_2">
                 <property name="text">
                  <string>XZ</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
                </widget>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0">
-                <property name="spacing">
-                 <number>6</number>
+               <widget class="QLabel" name="label_10">
+                <property name="text">
+                 <string>sizeV</string>
                 </property>
-                <item>
-                 <widget class="Plotter" name="plotter_XZ" native="true"/>
-                </item>
-                <item>
-                 <widget class="QSlider" name="verticalSlider_XZ">
-                  <property name="maximum">
-                   <number>99</number>
-                  </property>
-                  <property name="value">
-                   <number>50</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
               </item>
              </layout>
             </item>
             <item>
-             <widget class="Line" name="line_5">
-              <property name="frameShadow">
-               <enum>QFrame::Plain</enum>
-              </property>
-              <property name="lineWidth">
-               <number>2</number>
-              </property>
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
+             <layout class="QVBoxLayout" name="verticalLayout_12" stretch="10,90">
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>sizeH</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="Plotter" name="plotter_XZ" native="true"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_13" stretch="10,90">
+              <item>
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>slider</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="verticalSlider_XZ">
+                <property name="maximum">
+                 <number>99</number>
+                </property>
+                <property name="value">
+                 <number>50</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="1">
+           <widget class="Line" name="line_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_3" stretch="5,95">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>3D</string>
               </property>
              </widget>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_4">
+             <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0">
+              <property name="spacing">
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QWidget" name="plotter_3D" native="true"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout" stretch="5,90,5">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_2" stretch="10,90">
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>XY</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_11">
+                <property name="text">
+                 <string>sizeV</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_14" stretch="10,90">
+              <item>
+               <widget class="QLabel" name="label_12">
+                <property name="text">
+                 <string>sizeH</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="Plotter" name="plotter_XY" native="true"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_15" stretch="10,90">
+              <item>
+               <widget class="QLabel" name="label_13">
+                <property name="text">
+                 <string>slider</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="verticalSlider_XY">
+                <property name="maximum">
+                 <number>99</number>
+                </property>
+                <property name="value">
+                 <number>50</number>
+                </property>
+                <property name="sliderPosition">
+                 <number>50</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="Line" name="line_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="5,90,5">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_11" stretch="10,90">
               <item>
                <widget class="QLabel" name="label_5">
                 <property name="text">
                  <string>YZ</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
                </widget>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0">
-                <property name="spacing">
-                 <number>6</number>
+               <widget class="QLabel" name="label_6">
+                <property name="text">
+                 <string>sizeV</string>
                 </property>
-                <item>
-                 <widget class="Plotter" name="plotter_YZ" native="true"/>
-                </item>
-                <item>
-                 <widget class="QSlider" name="verticalSlider_YZ">
-                  <property name="maximum">
-                   <number>99</number>
-                  </property>
-                  <property name="sliderPosition">
-                   <number>50</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_5" stretch="10,90">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>sizeH</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="Plotter" name="plotter_YZ" native="true"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_4" stretch="10,90">
+              <item>
+               <widget class="QLabel" name="label_7">
+                <property name="text">
+                 <string>slider</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSlider" name="verticalSlider_YZ">
+                <property name="maximum">
+                 <number>99</number>
+                </property>
+                <property name="sliderPosition">
+                 <number>50</number>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="invertedAppearance">
+                 <bool>false</bool>
+                </property>
+                <property name="invertedControls">
+                 <bool>false</bool>
+                </property>
+               </widget>
               </item>
              </layout>
             </item>
            </layout>
+          </item>
+          <item row="3" column="1">
+           <widget class="Line" name="line_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -684,7 +778,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1039</width>
+     <width>1002</width>
      <height>22</height>
     </rect>
    </property>
