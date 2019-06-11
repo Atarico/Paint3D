@@ -1,5 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "sculptor.h"
+#include "geometricfigure.h"
+#include "putbox.h"
+#include "cutbox.h"
+#include "putsphere.h"
+#include "cutsphere.h"
+#include "putellipsoid.h"
+#include "cutellipsoid.h"
+#include "putvoxel.h"
+#include "cutvoxel.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -7,9 +17,22 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->plotter_XY->paintMatrix( XY, 50);
-    ui->plotter_XZ->paintMatrix( XZ, 50);
-    ui->plotter_YZ->paintMatrix( YZ, 50);
+    //Initializing our 3D sculptor to internally deal with drawing stuff.
+    vector<GeometricFigure*> figs;
+    sculptor = new Sculptor(10, 10, 10);
+    figs.push_back(new PutSphere(5, 5, 5, 3, 0.8, 0.1, 0.1, 1));
+    figs.push_back(new PutSphere(10, 10, 10, 5, 0.1, 0.1, 0.9, 0.1));
+    figs.push_back(new PutSphere(0, 10, 10, 5, 0.1, 0.1, 0.9, 0.1));
+    figs.push_back(new PutSphere(10, 0, 10, 5, 0.1, 0.9, 0.1, 0.1));
+    figs.push_back(new PutSphere(0, 0, 10, 5, 1, 1, 1, 0.1));
+    for(int i = 0; i< figs.size(); i++){
+        figs[i]->draw(*sculptor);
+    }
+    //End of 3D sculptor initialization
+
+    ui->plotter_XY->paintMatrix( sculptor, XY, 50 );
+    ui->plotter_XZ->paintMatrix( sculptor, XZ, 50 );
+    ui->plotter_YZ->paintMatrix( sculptor, YZ, 50 );
 
     connect(ui->verticalSlider_XY,
             SIGNAL(valueChanged(int)),
@@ -26,6 +49,8 @@ MainWindow::MainWindow(QWidget *parent) :
             this,
             SLOT(drawPlane()));
 
+    ui->plotter_3D->paintMatrix3D(sculptor);
+
 }
 
 MainWindow::~MainWindow()
@@ -35,7 +60,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::drawPlane()
 {
-    ui->plotter_XY->paintMatrix(XY, ui->verticalSlider_XY->value());
-    ui->plotter_XZ->paintMatrix(XZ, ui->verticalSlider_XZ->value());
-    ui->plotter_YZ->paintMatrix(YZ, ui->verticalSlider_YZ->value());
+    ui->plotter_XY->paintMatrix(sculptor, XY, ui->verticalSlider_XY->value());
+    ui->plotter_XZ->paintMatrix(sculptor, XZ, ui->verticalSlider_XZ->value());
+    ui->plotter_YZ->paintMatrix(sculptor, YZ, ui->verticalSlider_YZ->value());
 }

@@ -13,7 +13,6 @@ class Plotter : public QWidget
 
 private:
     vector<vector<Voxel>> plane2D;
-    Sculptor *sculptor;
 
 public:
     explicit Plotter(QWidget *parent = nullptr);
@@ -21,7 +20,7 @@ public:
     void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);
     void paintEvent(QPaintEvent *event);
-    void paintMatrix(int plane, int depth);
+    void paintMatrix(Sculptor *sculpt, int plane, int depth);
 
 signals:
     void moveX(int);

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "sculptor.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,6 +21,7 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    Sculptor *sculptor;
 };
 
 #endif // MAINWINDOW_H

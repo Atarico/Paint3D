@@ -20,6 +20,7 @@ SOURCES += main.cpp\
     cutvoxel.cpp \
     geometricfigure.cpp \
     plotter.cpp \
+    plotter3d.cpp \
     putbox.cpp \
     putellipsoid.cpp \
     putsphere.cpp \
@@ -33,6 +34,7 @@ HEADERS  += mainwindow.h \
     cutvoxel.h \
     geometricfigure.h \
     plotter.h \
+    plotter3d.h \
     putbox.h \
     putellipsoid.h \
     putsphere.h \

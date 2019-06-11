@@ -32,6 +32,7 @@ public:
   vector<vector<Voxel>> planeXY(float zFactor);
   vector<vector<Voxel>> planeXZ(float yFactor);
   vector<vector<Voxel>> planeYZ(float xFactor);
+  vector<vector<vector<Voxel>>> plane3D();
   void writeOFF(string filename);
   void writeVECT(string filename);
 };

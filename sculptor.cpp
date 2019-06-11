@@ -199,6 +199,29 @@ vector<vector<Voxel>> Sculptor::planeYZ(float xFactor)
 }
 
 /*!
+ * Retorna uma matriz 2D (vetor de vetores) de Voxels do plano YZ.
+ * \param xFactor um fator de profundidade que varia de 0 a 1. Permite o retorno de diferentes planos desde o plano zero até o plano nx-1.
+ */
+vector<vector<vector<Voxel>>> Sculptor::plane3D()
+{
+    vector<vector<vector<Voxel>>> matrix;
+    vector<vector<Voxel>> plane;
+    vector<Voxel> line;
+    for(int i = 0; i<nx; i++){
+        for(int j = 0; j<ny; j++){
+            for(int k = 0; k<nz; k++){
+                line.push_back(v[i][j][k]);
+            }
+            plane.push_back(line);
+            line.clear();
+        }
+        matrix.push_back(plane);
+        plane.clear();
+    }
+    return matrix;
+}
+
+/*!
  * Escreve um arquivo "filename".off no diretório do arquivo .exe com uma representação de nossa matriz 3D de voxels, 
  * permitindo a visualização da matriz em um software externo de representação 3D, como o 
 	<a href="http://www.meshlab.net" target="_blank">Meshlab</a>(Windows) ou o 

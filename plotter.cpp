@@ -10,7 +10,6 @@
 #include "putvoxel.h"
 #include "cutvoxel.h"
 
-#include <algorithm>
 #include <vector>
 #include <QPainter>
 #include <QPen>
@@ -19,23 +18,6 @@
 
 Plotter::Plotter(QWidget *parent) : QWidget(parent)
 {
-    //Initializing our 3D sculptor to internally deal with drawing stuff.
-    vector<GeometricFigure*> figs;
-
-    sculptor = new Sculptor(10, 10, 10);
-
-    //figs.push_back(new PutBox(3, 6, 3, 6, 3, 6, 0.1, 0.1, 0.9, 0.1));
-    figs.push_back(new PutSphere(5, 5, 5, 3, 0.8, 0.1, 0.1, 1));
-    figs.push_back(new PutSphere(10, 10, 10, 5, 0.1, 0.1, 0.9, 0.1));
-    figs.push_back(new PutSphere(0, 10, 10, 5, 0.1, 0.1, 0.9, 0.1));
-    figs.push_back(new PutSphere(10, 0, 10, 5, 0.1, 0.9, 0.1, 0.1));
-    figs.push_back(new PutSphere(0, 0, 10, 5, 1, 1, 1, 0.1));
-
-    for(int i = 0; i< figs.size(); i++){
-        figs[i]->draw(*sculptor);
-    }
-    //End of 3D sculptor initialization
-
     setMouseTracking(true);
 }
 
@@ -51,18 +33,18 @@ void Plotter::mousePressEvent(QMouseEvent *event){
   }
 }
 
-void Plotter::paintMatrix(int plane, int depth){
+void Plotter::paintMatrix(Sculptor *sculpt, int plane, int depth){
 
-    float depthNorm = float(depth)/100;
+        float depthNorm = float(depth)/100;
 
     if(plane == XY){
-        plane2D = sculptor->planeXY(depthNorm);
+        plane2D = sculpt->planeXY(depthNorm);
     }
     else if(plane == XZ){
-        plane2D = sculptor->planeXZ(depthNorm);
+        plane2D = sculpt->planeXZ(depthNorm);
     }
     else if(plane == YZ){
-        plane2D = sculptor->planeYZ(depthNorm);
+        plane2D = sculpt->planeYZ(depthNorm);
     }
 
     repaint();
@@ -75,16 +57,13 @@ void Plotter::paintEvent(QPaintEvent *event)
     QBrush brush;
 
     // preparando a caneta
-    // R, G, B
     pen.setColor(QColor(150,150,150));
     pen.setWidth(4);
-    // entregando a caneta ao pintor
     p.setPen(pen);
 
     // preparando o pincel
     brush.setColor(QColor(250,250,250));
     brush.setStyle(Qt::SolidPattern);
-    // entregando o pincel ao pintor
     p.setBrush(brush);
 
     p.drawRect(0,0,width(),height()); //painting the background rectangle
