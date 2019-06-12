@@ -135,6 +135,21 @@ void Sculptor::cutVoxel(int x, int y, int z)
     }
 }
 
+int Sculptor::getNx()
+{
+    return nx;
+}
+
+int Sculptor::getNy()
+{
+    return ny;
+}
+
+int Sculptor::getNz()
+{
+    return nz;
+}
+
 /*!
  * Retorna uma matriz 2D (vetor de vetores) de Voxels do plano XY.
  * \param zFactor um fator de profundidade que varia de 0 a 1. Permite o retorno de diferentes planos desde o plano zero até o plano nz-1.
@@ -162,7 +177,7 @@ vector<vector<Voxel>> Sculptor::planeXY(float zFactor)
  */
 vector<vector<Voxel>> Sculptor::planeXZ(float yFactor)
 {
-    int y0 = int(nz*yFactor);
+    int y0 = int(ny*yFactor);
 
     vector<vector<Voxel>> plane;
     vector<Voxel> line;
@@ -183,7 +198,7 @@ vector<vector<Voxel>> Sculptor::planeXZ(float yFactor)
  */
 vector<vector<Voxel>> Sculptor::planeYZ(float xFactor)
 {
-    int x0 = int(nz*xFactor);
+    int x0 = int(nx*xFactor);
 
     vector<vector<Voxel>> plane;
     vector<Voxel> line;

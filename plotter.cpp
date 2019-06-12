@@ -80,23 +80,30 @@ void Plotter::paintEvent(QPaintEvent *event)
     //PAINTING 2D MATRIX
     int sizeH = int(plane2D.size()); //horizontal size of our matrix in voxels
     int sizeV = int(plane2D[0].size()); //vertical size of our matrix in voxels
-    int smallerAxisPixels; //longest axis in relation to our plotter pixels
-    if(width() <= height()){
-        smallerAxisPixels = width();
-    }
-    else{
-        smallerAxisPixels = height();
-    }
-    int biggerAxisVoxels; //the longest axis in relation to our voxel matrix
-    if(sizeH >= sizeV){
-        biggerAxisVoxels = sizeH;
-    }
-    else{
-        biggerAxisVoxels = sizeV;
-    }
-    float normSize = smallerAxisPixels/biggerAxisVoxels; //a relation betwen our smaller pixel axis and our longest voxel axis to be used as a drawing unit.
 
-    QPoint *plottingStart = new QPoint(width()/2 - smallerAxisPixels/2, height()/2 - smallerAxisPixels/2); //defines the 2D point at which we will start painting our voxels.
+    float normSizeH = width()/sizeH;
+    float normSizeV = height()/sizeV;
+    float normSize;
+
+    if(normSizeH <= normSizeV){
+        normSize = normSizeH;
+    }
+    else{
+        normSize = normSizeV;
+    }
+
+//    int smallerAxisPixels; //longest axis in relation to our plotter pixels
+//    float normSize; //size in pixels of our voxels' sides
+//    if(width() <= height()){
+//        smallerAxisPixels = width();
+//        normSize = smallerAxisPixels/sizeH;
+//    }
+//    else{
+//        smallerAxisPixels = height();
+//        normSize = smallerAxisPixels/sizeV;
+//    }
+
+    QPoint *plottingStart = new QPoint(width()/2 - normSize*sizeH/2, height()/2 - normSize*sizeV/2); //defines the 2D point at which we will start painting our voxels.
 
     for(int i=0; i<sizeH; i++)
     {

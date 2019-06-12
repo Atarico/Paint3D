@@ -29,6 +29,9 @@ public:
   void setColor(float red, float green, float blue, float alpha);
   void putVoxel(int x, int y, int z);
   void cutVoxel(int x, int y, int z);
+  int getNx();
+  int getNy();
+  int getNz();
   vector<vector<Voxel>> planeXY(float zFactor);
   vector<vector<Voxel>> planeXZ(float yFactor);
   vector<vector<Voxel>> planeYZ(float xFactor);

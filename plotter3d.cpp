@@ -53,9 +53,9 @@ void Plotter3d::paintEvent(QPaintEvent *event)
     pen.setDashOffset(3);
     p.setPen(pen);
 
-    int sizeZ = int(plane3D.size());
+    int sizeX = int(plane3D.size());
     int sizeY = int(plane3D[0].size());
-    int sizeX = int(plane3D[0][0].size());
+    int sizeZ = int(plane3D[0][0].size());
 
     int smallerAxisPixels;
     if(width() <= height()){
@@ -95,7 +95,6 @@ void Plotter3d::paintEvent(QPaintEvent *event)
 
                     p.drawRect(i*normSize + plottingStart->x(), j*normSize + plottingStart->y(),
                                normSize, normSize);
-
                 }
             }
         }
