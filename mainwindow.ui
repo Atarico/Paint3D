@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1115</width>
-    <height>741</height>
+    <width>408</width>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,16 @@
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_16" stretch="20,5,75">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="30,15,15,20">
+       <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="0,0,0,30,15,15,20">
+        <item>
+         <widget class="QLCDNumber" name="lcdNumberClickX"/>
+        </item>
+        <item>
+         <widget class="QLCDNumber" name="lcdNumberClickY"/>
+        </item>
+        <item>
+         <widget class="QLCDNumber" name="lcdNumberClickZ"/>
+        </item>
         <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
@@ -819,8 +828,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1115</width>
-     <height>22</height>
+     <width>408</width>
+     <height>17</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -865,5 +874,22 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>verticalSlider_XY</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lcdNumberClickZ</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>383</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>180</x>
+     <y>55</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

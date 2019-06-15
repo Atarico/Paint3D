@@ -13,6 +13,8 @@ class Plotter : public QWidget
 
 private:
     vector<vector<Voxel>> plane2D;
+    QPoint *lul;
+    int normalizao;
 
 public:
     explicit Plotter(QWidget *parent = nullptr);
