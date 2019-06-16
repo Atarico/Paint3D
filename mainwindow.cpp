@@ -61,6 +61,21 @@ MainWindow::MainWindow(QWidget *parent) :
             ui->lcdNumberClickY,
             SLOT(display(int)));
 
+    connect(ui->plotter_XY,
+            SIGNAL(clickXY(int, int)),
+            this,
+            SLOT(drawSculptorXY(int, int)));
+
+    connect(ui->plotter_XZ,
+            SIGNAL(clickXY(int, int)),
+            this,
+            SLOT(drawSculptorXZ(int, int)));
+
+    connect(ui->plotter_YZ,
+            SIGNAL(clickXY(int, int)),
+            this,
+            SLOT(drawSculptorYZ(int, int)));
+
 
 }
 
@@ -74,4 +89,28 @@ void MainWindow::drawPlane()
     ui->plotter_XY->paintMatrix(sculptor, XY, ui->verticalSlider_XY->value());
     ui->plotter_XZ->paintMatrix(sculptor, XZ, ui->verticalSlider_XZ->value());
     ui->plotter_YZ->paintMatrix(sculptor, YZ, ui->verticalSlider_YZ->value());
+}
+
+void MainWindow::drawSculptorXY(int x0, int y0)
+{
+    float sliderZ0 = float(ui->verticalSlider_XY->value())/100;
+    int z0 = sliderZ0*sculptor->getNz();
+    sculptor->putVoxel(x0, y0, z0);
+    this->drawPlane();
+}
+
+void MainWindow::drawSculptorXZ(int x0, int z0)
+{
+    float sliderY0 = float(ui->verticalSlider_XZ->value())/100;
+    int y0 = sliderY0*sculptor->getNy();
+    sculptor->putVoxel(x0, y0, z0);
+    this->drawPlane();
+}
+
+void MainWindow::drawSculptorYZ(int y0, int z0)
+{
+    float sliderX0 = float(ui->verticalSlider_YZ->value())/100;
+    int x0 = sliderX0*sculptor->getNx();
+    sculptor->putVoxel(x0, y0, z0);
+    this->drawPlane();
 }

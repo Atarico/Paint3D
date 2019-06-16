@@ -18,18 +18,27 @@
 
 Plotter::Plotter(QWidget *parent) : QWidget(parent)
 {
-    setMouseTracking(true);
+    setMouseTracking(false);
 }
 
 void Plotter::mouseMoveEvent(QMouseEvent *event){
-  emit moveX(event->x());
-  emit moveY(event->y());
+    if(lmbPressed){
+        emit clickXY((event->x() - (plotStart->x()))/normalizao, (event->y()- (plotStart->y()))/normalizao);
+    }
 }
 
 void Plotter::mousePressEvent(QMouseEvent *event){
   if(event->button() == Qt::LeftButton ){
-    emit clickX((event->x() - (lul->x()))/normalizao);
-    emit clickY((event->y()- (lul->y()))/normalizao);
+    emit clickX((event->x() - (plotStart->x()))/normalizao);
+    emit clickY((event->y()- (plotStart->y()))/normalizao);
+    emit clickXY((event->x() - (plotStart->x()))/normalizao, (event->y()- (plotStart->y()))/normalizao);
+    lmbPressed = true;
+  }
+}
+
+void Plotter::mouseReleaseEvent(QMouseEvent *event){
+  if(event->button() == Qt::LeftButton ){
+    lmbPressed = false;
   }
 }
 
@@ -97,7 +106,7 @@ void Plotter::paintEvent(QPaintEvent *event)
     int normSize = smallerAxisPixels/biggerAxisVoxels; //a relation betwen our smaller pixel axis and our longest voxel axis to be used as a drawing unit.
     normalizao=normSize;
     QPoint *plottingStart = new QPoint(width()/2 - smallerAxisPixels/2, height()/2 - smallerAxisPixels/2); //defines the 2D point at which we will start painting our voxels.
-    lul=plottingStart;
+    plotStart=plottingStart;
     for(int i=0; i<sizeH; i++)
     {
         for(int j=0; j<sizeV; j++)
