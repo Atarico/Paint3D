@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>408</width>
-    <height>382</height>
+    <width>511</width>
+    <height>436</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -219,7 +219,7 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
-           <widget class="QPushButton" name="pushButtonDrawVoxel">
+           <widget class="QPushButton" name="pushButtonPutVoxel">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -253,7 +253,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonEraseVoxel">
+           <widget class="QPushButton" name="pushButtonCutVoxel">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -287,7 +287,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonDrawRectangle">
+           <widget class="QPushButton" name="pushButtonPutBox">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -321,7 +321,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonEraseRectangle">
+           <widget class="QPushButton" name="pushButtonCutBox">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -355,7 +355,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonDrawSphere">
+           <widget class="QPushButton" name="pushButtonPutSphere">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -389,7 +389,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonEraseSphere">
+           <widget class="QPushButton" name="pushButtonCutSphere">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -423,7 +423,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonDrawElipsoid">
+           <widget class="QPushButton" name="pushButtonPutEllipsoid">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -457,7 +457,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonEraseElipsoid">
+           <widget class="QPushButton" name="pushButtonCutEllipsoid">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -828,8 +828,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>408</width>
-     <height>17</height>
+     <width>511</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">

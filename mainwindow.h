@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "sculptor.h"
 
+enum { putvoxel, cutvoxel, putbox, cutbox, putsphere, cutsphere, putellipsoid, cutellipsoid };
+
 namespace Ui {
 class MainWindow;
 }
@@ -22,10 +24,21 @@ public slots:
     void drawSculptorXZ(int, int);
     void drawSculptorYZ(int, int);
 
+    void drawFigure(int x0, int y0, int z0, int brush);
+
+    void selectPutVoxel();
+    void selectCutVoxel();
+    void selectPutBox();
+    void selectCutBox();
+    void selectPutSphere();
+    void selectCutSphere();
+    void selectPutEllipsoid();
+    void selectCutEllipsoid();
+
 private:
     Ui::MainWindow *ui;
     Sculptor *sculptor;
-    int brush;
+    int brush = putvoxel;
 };
 
 #endif // MAINWINDOW_H

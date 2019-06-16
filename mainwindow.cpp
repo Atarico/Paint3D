@@ -76,6 +76,39 @@ MainWindow::MainWindow(QWidget *parent) :
             this,
             SLOT(drawSculptorYZ(int, int)));
 
+    //Connections from buttons to brush type
+    connect(ui->pushButtonPutVoxel,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(selectPutVoxel()));
+    connect(ui->pushButtonCutVoxel,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(selectCutVoxel()));
+    connect(ui->pushButtonPutBox,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(selectPutBox()));
+    connect(ui->pushButtonCutBox,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(selectCutBox()));
+    connect(ui->pushButtonPutSphere,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(selectPutSphere()));
+    connect(ui->pushButtonCutSphere,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(selectCutSphere()));
+    connect(ui->pushButtonPutEllipsoid,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(selectPutEllipsoid()));
+    connect(ui->pushButtonCutEllipsoid,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(selectCutEllipsoid()));
 
 }
 
@@ -95,22 +128,95 @@ void MainWindow::drawSculptorXY(int x0, int y0)
 {
     float sliderZ0 = float(ui->verticalSlider_XY->value())/100;
     int z0 = sliderZ0*sculptor->getNz();
-    sculptor->putVoxel(x0, y0, z0);
-    this->drawPlane();
+    drawFigure(x0,y0,z0,brush);
+    //sculptor->putVoxel(x0, y0, z0);
+    //this->drawPlane();
 }
 
 void MainWindow::drawSculptorXZ(int x0, int z0)
 {
     float sliderY0 = float(ui->verticalSlider_XZ->value())/100;
     int y0 = sliderY0*sculptor->getNy();
-    sculptor->putVoxel(x0, y0, z0);
-    this->drawPlane();
+    drawFigure(x0,y0,z0,brush);
+    //sculptor->putVoxel(x0, y0, z0);
+    //this->drawPlane();
 }
 
 void MainWindow::drawSculptorYZ(int y0, int z0)
 {
     float sliderX0 = float(ui->verticalSlider_YZ->value())/100;
     int x0 = sliderX0*sculptor->getNx();
-    sculptor->putVoxel(x0, y0, z0);
+    drawFigure(x0,y0,z0,brush);
+    //sculptor->putVoxel(x0, y0, z0);
+    //this->drawPlane();
+}
+
+
+void MainWindow::drawFigure(int x0, int y0, int z0, int brush)
+{
+    vector<GeometricFigure*> figs;
+
+    if(brush == putvoxel){
+        figs.push_back(new PutVoxel(x0,y0,z0,0,0,0,1)); //COLOR SYSTEM MISSING
+    }
+    if(brush == cutvoxel){
+        figs.push_back(new CutVoxel(x0,y0,z0)); //COLOR SYSTEM MISSING
+    }
+    if(brush == putbox){
+        figs.push_back(new PutBox(x0-2,x0+2,y0-2,y0+2,z0-2,z0+2,0,0,0,1)); //COLOR SYSTEM MISSING & RADIUS SYSTEM MISSING
+    }
+    if(brush == cutbox){
+        figs.push_back(new CutBox(x0-2,x0+2,y0-2,y0+2,z0-2,z0+2)); //RADIUS SYSTEM MISSING
+    }
+    if(brush == putsphere){
+        figs.push_back(new PutSphere(x0, y0, z0, 2, 0, 0, 0, 1)); //COLOR SYSTEM MISSING & RADIUS SYSTEM MISSING
+    }
+    if(brush == cutsphere){
+        figs.push_back(new CutSphere(x0, y0, z0, 2)); //RADIUS SYSTEM MISSING
+    }
+    if(brush == putellipsoid){
+        figs.push_back(new PutEllipsoid(x0,y0,z0,2,3,4,0,0,0,1)); //COLOR SYSTEM MISSING & RADIUS SYSTEM MISSING
+    }
+    if(brush == cutellipsoid){
+        figs.push_back(new CutEllipsoid(x0, y0, z0, 2, 3, 4)); //RADIUS SYSTEM MISSING
+    }
+    for(int i = 0; i< figs.size(); i++){
+        figs[i]->draw(*sculptor);
+    }
     this->drawPlane();
+}
+
+
+//Selecting brush types
+void MainWindow::selectPutVoxel()
+{
+    brush = putvoxel;
+}
+void MainWindow::selectCutVoxel()
+{
+    brush = cutvoxel;
+}
+void MainWindow::selectPutBox()
+{
+    brush = putbox;
+}
+void MainWindow::selectCutBox()
+{
+    brush = cutbox;
+}
+void MainWindow::selectPutSphere()
+{
+    brush = putsphere;
+}
+void MainWindow::selectCutSphere()
+{
+    brush = cutsphere;
+}
+void MainWindow::selectPutEllipsoid()
+{
+    brush = putellipsoid;
+}
+void MainWindow::selectCutEllipsoid()
+{
+    brush = cutellipsoid;
 }
