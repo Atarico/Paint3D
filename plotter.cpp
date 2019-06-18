@@ -18,10 +18,12 @@
 
 Plotter::Plotter(QWidget *parent) : QWidget(parent)
 {
-    setMouseTracking(false);
+    setMouseTracking(true);
 }
 
 void Plotter::mouseMoveEvent(QMouseEvent *event){
+    emit clickX((event->x() - (plotStart->x()))/normalizao);
+    emit clickY((event->y()- (plotStart->y()))/normalizao);
     if(lmbPressed){
         emit clickXY((event->x() - (plotStart->x()))/normalizao, (event->y()- (plotStart->y()))/normalizao);
     }

@@ -61,6 +61,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->plotter_3D->paintMatrix3D(sculptor);
 
+
+    //Connections from plotter to lcdNumber
     connect(ui->plotter_XY,
             SIGNAL(clickX(int)),
             ui->lcdNumberClickX,
@@ -70,6 +72,31 @@ MainWindow::MainWindow(QWidget *parent) :
             SIGNAL(clickY(int)),
             ui->lcdNumberClickY,
             SLOT(display(int)));
+
+    connect(ui->plotter_XZ,
+            SIGNAL(clickX(int)),
+            ui->lcdNumberClickX,
+            SLOT(display(int)));
+
+    connect(ui->plotter_XZ,
+            SIGNAL(clickY(int)),
+            ui->lcdNumberClickZ,
+            SLOT(display(int)));
+
+    connect(ui->plotter_YZ,
+            SIGNAL(clickX(int)),
+            ui->lcdNumberClickY,
+            SLOT(display(int)));
+
+    connect(ui->plotter_YZ,
+            SIGNAL(clickY(int)),
+            ui->lcdNumberClickZ,
+            SLOT(display(int)));
+
+
+
+
+
 
     connect(ui->plotter_XY,
             SIGNAL(clickXY(int, int)),
