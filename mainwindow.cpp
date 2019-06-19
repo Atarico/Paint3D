@@ -10,6 +10,7 @@
 #include "cutellipsoid.h"
 #include "putvoxel.h"
 #include "cutvoxel.h"
+#include <QColorDialog>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -101,7 +102,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->plotter_XY,
             SIGNAL(clickXY(int, int)),
             this,
-            SLOT(drawSculptorXY(int, int)));
+            SLOT(XYXY(int, int)));
 
     connect(ui->plotter_XZ,
             SIGNAL(clickXY(int, int)),
@@ -146,6 +147,11 @@ MainWindow::MainWindow(QWidget *parent) :
             SIGNAL(clicked(bool)),
             this,
             SLOT(selectCutEllipsoid()));
+    connect(ui->pushButtonColor,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(mudaCor()));
+
 
 }
 
@@ -256,4 +262,17 @@ void MainWindow::selectPutEllipsoid()
 void MainWindow::selectCutEllipsoid()
 {
     brush = cutellipsoid;
+}
+
+void MainWindow::mudaCor()
+{
+    QColorDialog d;
+    d.exec();
+    QColor color;
+    color = d.selectedColor();
+    r = color.red();
+    g = color.green();
+    b = color.blue();
+    r=r/255.0;
+    repaint();
 }

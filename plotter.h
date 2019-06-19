@@ -16,7 +16,6 @@ private:
     QPoint *plotStart;
     int normalizao;
     bool lmbPressed = false;
-
 public:
     explicit Plotter(QWidget *parent = nullptr);
 

@@ -10,6 +10,7 @@
 #include "putvoxel.h"
 #include "cutvoxel.h"
 
+
 #include <vector>
 #include <QPainter>
 #include <QPen>
@@ -60,6 +61,8 @@ void Plotter::paintMatrix(Sculptor *sculpt, int plane, int depth){
 
     repaint();
 }
+
+
 
 void Plotter::paintEvent(QPaintEvent *event)
 {

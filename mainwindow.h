@@ -35,10 +35,15 @@ public slots:
     void selectPutEllipsoid();
     void selectCutEllipsoid();
 
+    void mudaCor();
+
 private:
     Ui::MainWindow *ui;
     Sculptor *sculptor;
     int brush = putvoxel;
+    int color;
+    float r,g,b;
+
 };
 
 #endif // MAINWINDOW_H
