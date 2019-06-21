@@ -102,7 +102,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->plotter_XY,
             SIGNAL(clickXY(int, int)),
             this,
-            SLOT(XYXY(int, int)));
+            SLOT(drawSculptorXY(int, int)));
 
     connect(ui->plotter_XZ,
             SIGNAL(clickXY(int, int)),
@@ -165,6 +165,10 @@ void MainWindow::drawPlane()
     ui->plotter_XY->paintMatrix(sculptor, XY, ui->verticalSlider_XY->value());
     ui->plotter_XZ->paintMatrix(sculptor, XZ, ui->verticalSlider_XZ->value());
     ui->plotter_YZ->paintMatrix(sculptor, YZ, ui->verticalSlider_YZ->value());
+
+    ui->slider_XY->setText(QString::number(int(ui->verticalSlider_XY->value()/(100.0/sculptor->getNz()))));
+    ui->slider_XZ->setText(QString::number(int(ui->verticalSlider_XZ->value()/(100.0/sculptor->getNy()))));
+    ui->slider_YZ->setText(QString::number(int(ui->verticalSlider_YZ->value()/(100.0/sculptor->getNx()))));
 }
 
 void MainWindow::drawSculptorXY(int x0, int y0)
@@ -200,25 +204,31 @@ void MainWindow::drawFigure(int x0, int y0, int z0, int brush)
     vector<GeometricFigure*> figs;
 
     if(brush == putvoxel){
-        figs.push_back(new PutVoxel(x0,y0,z0,0,0,0,1)); //COLOR SYSTEM MISSING
+        figs.push_back(new PutVoxel(x0,y0,z0,r,g,b,1));
     }
     if(brush == cutvoxel){
-        figs.push_back(new CutVoxel(x0,y0,z0)); //COLOR SYSTEM MISSING
+        figs.push_back(new CutVoxel(x0,y0,z0));
     }
     if(brush == putbox){
-        figs.push_back(new PutBox(x0-2,x0+2,y0-2,y0+2,z0-2,z0+2,0,0,0,1)); //COLOR SYSTEM MISSING & RADIUS SYSTEM MISSING
+        figs.push_back(new PutBox(x0-((ui->lineEditRectangleSizeX->text()).toInt()/2),
+                                  x0+((ui->lineEditRectangleSizeX->text()).toInt()/2),
+                                  y0-((ui->lineEditRectangleSizeY->text()).toInt()/2),
+                                  y0+((ui->lineEditRectangleSizeY->text()).toInt()/2),
+                                  z0-((ui->lineEditRectangleSizeZ->text()).toInt()/2),
+                                  z0+((ui->lineEditRectangleSizeZ->text()).toInt()/2),
+                                  r,g,b,1));
     }
     if(brush == cutbox){
         figs.push_back(new CutBox(x0-2,x0+2,y0-2,y0+2,z0-2,z0+2)); //RADIUS SYSTEM MISSING
     }
     if(brush == putsphere){
-        figs.push_back(new PutSphere(x0, y0, z0, 2, 0, 0, 0, 1)); //COLOR SYSTEM MISSING & RADIUS SYSTEM MISSING
+        figs.push_back(new PutSphere(x0, y0, z0, 2, r, g, b, 1)); //COLOR SYSTEM MISSING & RADIUS SYSTEM MISSING
     }
     if(brush == cutsphere){
         figs.push_back(new CutSphere(x0, y0, z0, 2)); //RADIUS SYSTEM MISSING
     }
     if(brush == putellipsoid){
-        figs.push_back(new PutEllipsoid(x0,y0,z0,2,3,4,0,0,0,1)); //COLOR SYSTEM MISSING & RADIUS SYSTEM MISSING
+        figs.push_back(new PutEllipsoid(x0,y0,z0,2,3,4,r,g,b,1)); //COLOR SYSTEM MISSING & RADIUS SYSTEM MISSING
     }
     if(brush == cutellipsoid){
         figs.push_back(new CutEllipsoid(x0, y0, z0, 2, 3, 4)); //RADIUS SYSTEM MISSING
@@ -267,12 +277,18 @@ void MainWindow::selectCutEllipsoid()
 void MainWindow::mudaCor()
 {
     QColorDialog d;
+
+    QColor previousColor(r*255, g*255, b*255);
+    d.setCurrentColor(previousColor);
     d.exec();
+
     QColor color;
-    color = d.selectedColor();
+    color= d.selectedColor();
+
     r = color.red();
     g = color.green();
     b = color.blue();
     r=r/255.0;
-    repaint();
+    g=g/255.0;
+    b=b/255.0;
 }

@@ -42,7 +42,7 @@ private:
     Sculptor *sculptor;
     int brush = putvoxel;
     int color;
-    float r,g,b;
+    float r = 1,g = 1,b = 1;
 
 };
 

@@ -629,7 +629,7 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_15" stretch="10,90">
               <item>
-               <widget class="QLabel" name="label_13">
+               <widget class="QLabel" name="slider_XY">
                 <property name="text">
                  <string>slider</string>
                 </property>
@@ -711,7 +711,7 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_13" stretch="10,90">
               <item>
-               <widget class="QLabel" name="label_8">
+               <widget class="QLabel" name="slider_XZ">
                 <property name="text">
                  <string>slider</string>
                 </property>
@@ -790,7 +790,7 @@
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_4" stretch="10,90">
               <item>
-               <widget class="QLabel" name="label_7">
+               <widget class="QLabel" name="slider_YZ">
                 <property name="text">
                  <string>slider</string>
                 </property>
@@ -881,54 +881,5 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>verticalSlider_XY</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>lcdNumberClickZ</receiver>
-   <slot>display(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1174</x>
-     <y>371</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>180</x>
-     <y>55</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>verticalSlider_XZ</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>lcdNumberClickY</receiver>
-   <slot>display(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>629</x>
-     <y>545</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>116</x>
-     <y>151</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>verticalSlider_YZ</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>lcdNumberClickX</receiver>
-   <slot>display(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1170</x>
-     <y>539</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>43</x>
-     <y>141</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
