@@ -836,13 +836,14 @@
      <x>0</x>
      <y>0</y>
      <width>1195</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionNew_3D_Canvas"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -853,12 +854,69 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionDim"/>
+   <addaction name="actionputvoxel"/>
+   <addaction name="actioncutvoxel"/>
+   <addaction name="separator"/>
+   <addaction name="actionputbox"/>
+   <addaction name="actioncutbox"/>
+   <addaction name="separator"/>
+   <addaction name="actionputsphere"/>
+   <addaction name="actioncutsphere"/>
+   <addaction name="separator"/>
+   <addaction name="actionputellipsoid"/>
+   <addaction name="actioncutellipsoid"/>
+   <addaction name="separator"/>
+   <addaction name="actionwriteOFF"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionDim">
+  <action name="actionputvoxel">
    <property name="text">
-    <string>Dim</string>
+    <string>putvoxel</string>
+   </property>
+  </action>
+  <action name="actioncutvoxel">
+   <property name="text">
+    <string>cutvoxel</string>
+   </property>
+  </action>
+  <action name="actionputbox">
+   <property name="text">
+    <string>putbox</string>
+   </property>
+  </action>
+  <action name="actioncutbox">
+   <property name="text">
+    <string>cutbox</string>
+   </property>
+  </action>
+  <action name="actionputsphere">
+   <property name="text">
+    <string>putsphere</string>
+   </property>
+  </action>
+  <action name="actioncutsphere">
+   <property name="text">
+    <string>cutsphere</string>
+   </property>
+  </action>
+  <action name="actionputellipsoid">
+   <property name="text">
+    <string>putellipsoid</string>
+   </property>
+  </action>
+  <action name="actioncutellipsoid">
+   <property name="text">
+    <string>cutellipsoid</string>
+   </property>
+  </action>
+  <action name="actionwriteOFF">
+   <property name="text">
+    <string>writeOFF</string>
+   </property>
+  </action>
+  <action name="actionNew_3D_Canvas">
+   <property name="text">
+    <string>New 3D Canvas</string>
    </property>
   </action>
  </widget>

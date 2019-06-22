@@ -13,6 +13,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    dialognewcanvas.cpp \
         mainwindow.cpp \
     cutbox.cpp \
     cutellipsoid.cpp \
@@ -32,6 +33,7 @@ HEADERS  += mainwindow.h \
     cutellipsoid.h \
     cutsphere.h \
     cutvoxel.h \
+    dialognewcanvas.h \
     geometricfigure.h \
     plotter.h \
     plotter3d.h \
@@ -41,4 +43,5 @@ HEADERS  += mainwindow.h \
     putvoxel.h \
     sculptor.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    dialognewcanvas.ui

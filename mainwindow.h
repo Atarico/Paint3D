@@ -19,6 +19,7 @@ public:
     ~MainWindow();
 
 public slots:
+    void setDimSculptor();
     void drawPlane();
     void drawSculptorXY(int, int);
     void drawSculptorXZ(int, int);

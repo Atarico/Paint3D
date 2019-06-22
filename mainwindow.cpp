@@ -10,6 +10,7 @@
 #include "cutellipsoid.h"
 #include "putvoxel.h"
 #include "cutvoxel.h"
+#include "dialognewcanvas.h"
 #include <QColorDialog>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -18,9 +19,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //Initializing our 3D sculptor to internally deal with drawing stuff.
+    //Initializing our 3D sculptor with a standard dimension of 10x10x10.
     vector<GeometricFigure*> figs;
-    sculptor = new Sculptor(10, 15, 20);
+    sculptor = new Sculptor(10, 10, 10);
     figs.push_back(new PutSphere(5, 5, 5, 3, 0.8, 0.1, 0.1, 1));
     figs.push_back(new PutSphere(10, 10, 10, 5, 0.1, 0.1, 0.9, 0.1));
     figs.push_back(new PutSphere(0, 10, 10, 5, 0.1, 0.1, 0.9, 0.1));
@@ -30,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
         figs[i]->draw(*sculptor);
     }
     //End of 3D sculptor initialization
+
 
     ui->plotter_XY->paintMatrix( sculptor, XY, 50 );
     ui->plotter_XZ->paintMatrix( sculptor, XZ, 50 );
@@ -45,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->label_YZ_H->setText(QString::number(sculptor->getNy()));
     ui->label_YZ_V->setText(QString::number(sculptor->getNz()));
 
+    //Connections from the depth sliders to the SLOT that draws our matrixes on their plotters
     connect(ui->verticalSlider_XY,
             SIGNAL(valueChanged(int)),
             this,
@@ -94,11 +97,7 @@ MainWindow::MainWindow(QWidget *parent) :
             ui->lcdNumberClickZ,
             SLOT(display(int)));
 
-
-
-
-
-
+    //Connections from clicking in the plotting widgets to the SLOT that draws the selected figure on our sculptor
     connect(ui->plotter_XY,
             SIGNAL(clickXY(int, int)),
             this,
@@ -152,12 +151,33 @@ MainWindow::MainWindow(QWidget *parent) :
             this,
             SLOT(mudaCor()));
 
+    //Connecting the actions to SLOTS
+    connect(ui->actionNew_3D_Canvas,
+            SIGNAL(triggered(bool)),
+            this,
+            SLOT(setDimSculptor()));
+
 
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setDimSculptor()
+{
+    DialogNewCanvas dialog;
+
+    if(dialog.exec() == QDialog::Accepted){
+        int nx, ny, nz;
+        nx = dialog.getDimX();
+        ny = dialog.getDimY();
+        nz = dialog.getDimZ();
+
+        sculptor = new Sculptor(nx, ny, nz);
+        drawPlane();
+    }
 }
 
 void MainWindow::drawPlane()
@@ -169,6 +189,16 @@ void MainWindow::drawPlane()
     ui->slider_XY->setText(QString::number(int(ui->verticalSlider_XY->value()/(100.0/sculptor->getNz()))));
     ui->slider_XZ->setText(QString::number(int(ui->verticalSlider_XZ->value()/(100.0/sculptor->getNy()))));
     ui->slider_YZ->setText(QString::number(int(ui->verticalSlider_YZ->value()/(100.0/sculptor->getNx()))));
+
+    //connecting plotter dimensions to labels
+    ui->label_XY_H->setText(QString::number(sculptor->getNx()));
+    ui->label_XY_V->setText(QString::number(sculptor->getNy()));
+
+    ui->label_XZ_H->setText(QString::number(sculptor->getNx()));
+    ui->label_XZ_V->setText(QString::number(sculptor->getNz()));
+
+    ui->label_YZ_H->setText(QString::number(sculptor->getNy()));
+    ui->label_YZ_V->setText(QString::number(sculptor->getNz()));
 }
 
 void MainWindow::drawSculptorXY(int x0, int y0)
@@ -176,8 +206,6 @@ void MainWindow::drawSculptorXY(int x0, int y0)
     float sliderZ0 = float(ui->verticalSlider_XY->value())/100;
     int z0 = sliderZ0*sculptor->getNz();
     drawFigure(x0,y0,z0,brush);
-    //sculptor->putVoxel(x0, y0, z0);
-    //this->drawPlane();
 }
 
 void MainWindow::drawSculptorXZ(int x0, int z0)
@@ -185,8 +213,6 @@ void MainWindow::drawSculptorXZ(int x0, int z0)
     float sliderY0 = float(ui->verticalSlider_XZ->value())/100;
     int y0 = sliderY0*sculptor->getNy();
     drawFigure(x0,y0,z0,brush);
-    //sculptor->putVoxel(x0, y0, z0);
-    //this->drawPlane();
 }
 
 void MainWindow::drawSculptorYZ(int y0, int z0)
@@ -194,8 +220,6 @@ void MainWindow::drawSculptorYZ(int y0, int z0)
     float sliderX0 = float(ui->verticalSlider_YZ->value())/100;
     int x0 = sliderX0*sculptor->getNx();
     drawFigure(x0,y0,z0,brush);
-    //sculptor->putVoxel(x0, y0, z0);
-    //this->drawPlane();
 }
 
 
@@ -219,19 +243,33 @@ void MainWindow::drawFigure(int x0, int y0, int z0, int brush)
                                   r,g,b,1));
     }
     if(brush == cutbox){
-        figs.push_back(new CutBox(x0-2,x0+2,y0-2,y0+2,z0-2,z0+2)); //RADIUS SYSTEM MISSING
+        figs.push_back(new CutBox(x0-((ui->lineEditRectangleSizeX->text()).toInt()/2),
+                                  x0+((ui->lineEditRectangleSizeX->text()).toInt()/2),
+                                  y0-((ui->lineEditRectangleSizeY->text()).toInt()/2),
+                                  y0+((ui->lineEditRectangleSizeY->text()).toInt()/2),
+                                  z0-((ui->lineEditRectangleSizeZ->text()).toInt()/2),
+                                  z0+((ui->lineEditRectangleSizeZ->text()).toInt()/2)));
     }
     if(brush == putsphere){
-        figs.push_back(new PutSphere(x0, y0, z0, 2, r, g, b, 1)); //COLOR SYSTEM MISSING & RADIUS SYSTEM MISSING
+        figs.push_back(new PutSphere(x0, y0, z0, (ui->lineEditSphereRadius->text()).toInt(), r, g, b, 1));
     }
     if(brush == cutsphere){
-        figs.push_back(new CutSphere(x0, y0, z0, 2)); //RADIUS SYSTEM MISSING
+        figs.push_back(new CutSphere(x0, y0, z0, (ui->lineEditSphereRadius->text()).toInt()));
     }
     if(brush == putellipsoid){
-        figs.push_back(new PutEllipsoid(x0,y0,z0,2,3,4,r,g,b,1)); //COLOR SYSTEM MISSING & RADIUS SYSTEM MISSING
+        figs.push_back(new PutEllipsoid(x0,
+                                        y0,
+                                        z0,
+                                        (ui->lineEditElipsoidRadiusX->text()).toInt(),
+                                        (ui->lineEditElipsoidRadiusY->text()).toInt(),
+                                        (ui->lineEditElipsoidRadiusZ->text()).toInt(),
+                                        r,g,b,1));
     }
     if(brush == cutellipsoid){
-        figs.push_back(new CutEllipsoid(x0, y0, z0, 2, 3, 4)); //RADIUS SYSTEM MISSING
+        figs.push_back(new CutEllipsoid(x0, y0, z0,
+                                        (ui->lineEditElipsoidRadiusX->text()).toInt(),
+                                        (ui->lineEditElipsoidRadiusY->text()).toInt(),
+                                        (ui->lineEditElipsoidRadiusZ->text()).toInt()));
     }
     for(int i = 0; i< figs.size(); i++){
         figs[i]->draw(*sculptor);
