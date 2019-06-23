@@ -16,24 +16,74 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout_17">
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout_16" stretch="20,5,75">
+     <layout class="QVBoxLayout" name="verticalLayout_16" stretch="15,5,75">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="0,0,0,0,30,15,15,20">
+       <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="20,10,10,20,20,20">
         <item>
-         <widget class="QLCDNumber" name="lcdNumberClickX"/>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLCDNumber" name="lcdNumberClickX">
+            <property name="minimumSize">
+             <size>
+              <width>70</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>70</width>
+              <height>200</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="lcdNumberClickY">
+            <property name="minimumSize">
+             <size>
+              <width>70</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>70</width>
+              <height>200</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLCDNumber" name="lcdNumberClickZ">
+            <property name="minimumSize">
+             <size>
+              <width>70</width>
+              <height>120</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>70</width>
+              <height>200</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
-         <widget class="QLCDNumber" name="lcdNumberClickY"/>
-        </item>
-        <item>
-         <widget class="QLCDNumber" name="lcdNumberClickZ"/>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButtonColor">
-          <property name="text">
-           <string>color</string>
-          </property>
-         </widget>
+         <layout class="QVBoxLayout" name="verticalLayout_6" stretch="20,80">
+          <item>
+           <widget class="QPushButton" name="pushButtonColor">
+            <property name="text">
+             <string>color</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget" native="true"/>
+          </item>
+         </layout>
         </item>
         <item>
          <spacer name="horizontalSpacer">
@@ -42,7 +92,7 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>378</width>
+            <width>108</width>
             <height>20</height>
            </size>
           </property>
@@ -50,6 +100,12 @@
         </item>
         <item>
          <widget class="QGroupBox" name="groupBoxRectangle">
+          <property name="minimumSize">
+           <size>
+            <width>180</width>
+            <height>130</height>
+           </size>
+          </property>
           <property name="layoutDirection">
            <enum>Qt::LeftToRight</enum>
           </property>
@@ -72,7 +128,7 @@
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>20</y>
+             <y>30</y>
              <width>151</width>
              <height>91</height>
             </rect>
@@ -122,6 +178,12 @@
         </item>
         <item>
          <widget class="QGroupBox" name="groupBoxSphere">
+          <property name="minimumSize">
+           <size>
+            <width>180</width>
+            <height>130</height>
+           </size>
+          </property>
           <property name="title">
            <string>Sphere</string>
           </property>
@@ -151,6 +213,12 @@
         </item>
         <item>
          <widget class="QGroupBox" name="groupBoxElipsoid">
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>130</height>
+           </size>
+          </property>
           <property name="title">
            <string>Ellipsoid</string>
           </property>
@@ -158,7 +226,7 @@
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>20</y>
+             <y>30</y>
              <width>190</width>
              <height>91</height>
             </rect>
@@ -222,603 +290,338 @@
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_5">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_6">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_3" stretch="10,90">
           <item>
-           <widget class="QPushButton" name="pushButtonPutVoxel">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>120</width>
-              <height>120</height>
-             </size>
-            </property>
-            <property name="baseSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
+           <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>Draw Voxel</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
+             <string>3D</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButtonCutVoxel">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>120</width>
-              <height>120</height>
-             </size>
-            </property>
-            <property name="baseSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Erase Voxel</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButtonPutBox">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>120</width>
-              <height>120</height>
-             </size>
-            </property>
-            <property name="baseSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Draw Rectangle</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButtonCutBox">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>120</width>
-              <height>120</height>
-             </size>
-            </property>
-            <property name="baseSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Erase Rectangle</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButtonPutSphere">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>120</width>
-              <height>120</height>
-             </size>
-            </property>
-            <property name="baseSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Draw Sphere</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButtonCutSphere">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>120</width>
-              <height>120</height>
-             </size>
-            </property>
-            <property name="baseSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Erase Sphere</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButtonPutEllipsoid">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>120</width>
-              <height>120</height>
-             </size>
-            </property>
-            <property name="baseSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Draw Ellipsoid</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButtonCutEllipsoid">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>120</width>
-              <height>120</height>
-             </size>
-            </property>
-            <property name="baseSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Erase Ellipsoid</string>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>41</width>
-              <height>41</height>
-             </size>
-            </property>
-           </widget>
+           <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="5,90,5">
+            <item>
+             <widget class="QLabel" name="label_15">
+              <property name="minimumSize">
+               <size>
+                <width>36</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>36</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="Plotter3d" name="plotter_3D" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>240</width>
+                <height>240</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_14">
+              <property name="minimumSize">
+               <size>
+                <width>38</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>38</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>
-        <item>
-         <widget class="Line" name="line">
-          <property name="frameShadow">
-           <enum>QFrame::Sunken</enum>
-          </property>
-          <property name="lineWidth">
-           <number>3</number>
-          </property>
+        <item row="0" column="1">
+         <widget class="Line" name="line_4">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
          </widget>
         </item>
-        <item>
-         <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <layout class="QVBoxLayout" name="verticalLayout_3" stretch="10,90">
+        <item row="0" column="2">
+         <layout class="QHBoxLayout" name="horizontalLayout" stretch="5,90,5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2" stretch="10,90">
             <item>
-             <widget class="QLabel" name="label_4">
+             <widget class="QLabel" name="label_3">
               <property name="text">
-               <string>3D</string>
+               <string>XY</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="5,90,5">
-              <item>
-               <widget class="QLabel" name="label_15">
-                <property name="minimumSize">
-                 <size>
-                  <width>36</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>36</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="Plotter3d" name="plotter_3D" native="true"/>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_14">
-                <property name="minimumSize">
-                 <size>
-                  <width>38</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>38</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QLabel" name="label_XY_V">
+              <property name="text">
+               <string>sizeV</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
-          <item row="0" column="1">
-           <widget class="Line" name="line_4">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <layout class="QHBoxLayout" name="horizontalLayout" stretch="5,90,5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_14" stretch="10,90">
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_2" stretch="10,90">
-              <item>
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>XY</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_XY_V">
-                <property name="text">
-                 <string>sizeV</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QLabel" name="label_XY_H">
+              <property name="text">
+               <string>sizeH</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_14" stretch="10,90">
-              <item>
-               <widget class="QLabel" name="label_XY_H">
-                <property name="text">
-                 <string>sizeH</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="Plotter" name="plotter_XY" native="true"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_15" stretch="10,90">
-              <item>
-               <widget class="QLabel" name="slider_XY">
-                <property name="text">
-                 <string>slider</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QSlider" name="verticalSlider_XY">
-                <property name="maximum">
-                 <number>99</number>
-                </property>
-                <property name="value">
-                 <number>50</number>
-                </property>
-                <property name="sliderPosition">
-                 <number>50</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="Plotter" name="plotter_XY" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>240</width>
+                <height>240</height>
+               </size>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
-          <item row="1" column="0" colspan="3">
-           <widget class="Line" name="line_3">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="5,90,5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_15" stretch="10,90">
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout" stretch="10,90">
-              <item>
-               <widget class="QLabel" name="label_2">
-                <property name="text">
-                 <string>XZ</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_XZ_V">
-                <property name="text">
-                 <string>sizeV</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QLabel" name="slider_XY">
+              <property name="text">
+               <string>slider</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_12" stretch="10,90">
-              <item>
-               <widget class="QLabel" name="label_XZ_H">
-                <property name="text">
-                 <string>sizeH</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="Plotter" name="plotter_XZ" native="true"/>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_13" stretch="10,90">
-              <item>
-               <widget class="QLabel" name="slider_XZ">
-                <property name="text">
-                 <string>slider</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QSlider" name="verticalSlider_XZ">
-                <property name="maximum">
-                 <number>99</number>
-                </property>
-                <property name="value">
-                 <number>50</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QSlider" name="verticalSlider_XY">
+              <property name="maximum">
+               <number>99</number>
+              </property>
+              <property name="value">
+               <number>50</number>
+              </property>
+              <property name="sliderPosition">
+               <number>50</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
-          <item row="2" column="1">
-           <widget class="Line" name="line_5">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-           </widget>
+         </layout>
+        </item>
+        <item row="1" column="0" colspan="3">
+         <widget class="Line" name="line_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="5,90,5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout" stretch="10,90">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>XZ</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_XZ_V">
+              <property name="text">
+               <string>sizeV</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
-          <item row="2" column="2">
-           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="5,90,5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_12" stretch="10,90">
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_11" stretch="10,90">
-              <item>
-               <widget class="QLabel" name="label_5">
-                <property name="text">
-                 <string>YZ</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_YZ_V">
-                <property name="text">
-                 <string>sizeV</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QLabel" name="label_XZ_H">
+              <property name="text">
+               <string>sizeH</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_5" stretch="10,90">
-              <item>
-               <widget class="QLabel" name="label_YZ_H">
-                <property name="text">
-                 <string>sizeH</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="Plotter" name="plotter_YZ" native="true"/>
-              </item>
-             </layout>
+             <widget class="Plotter" name="plotter_XZ" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>240</width>
+                <height>240</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_13" stretch="10,90">
+            <item>
+             <widget class="QLabel" name="slider_XZ">
+              <property name="text">
+               <string>slider</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_4" stretch="10,90">
-              <item>
-               <widget class="QLabel" name="slider_YZ">
-                <property name="text">
-                 <string>slider</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QSlider" name="verticalSlider_YZ">
-                <property name="maximum">
-                 <number>99</number>
-                </property>
-                <property name="sliderPosition">
-                 <number>50</number>
-                </property>
-                <property name="orientation">
-                 <enum>Qt::Vertical</enum>
-                </property>
-                <property name="invertedAppearance">
-                 <bool>false</bool>
-                </property>
-                <property name="invertedControls">
-                 <bool>false</bool>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <widget class="QSlider" name="verticalSlider_XZ">
+              <property name="maximum">
+               <number>99</number>
+              </property>
+              <property name="value">
+               <number>50</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="1">
+         <widget class="Line" name="line_5">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="5,90,5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_11" stretch="10,90">
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>YZ</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_YZ_V">
+              <property name="text">
+               <string>sizeV</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5" stretch="10,90">
+            <item>
+             <widget class="QLabel" name="label_YZ_H">
+              <property name="text">
+               <string>sizeH</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="Plotter" name="plotter_YZ" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>240</width>
+                <height>240</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4" stretch="10,90">
+            <item>
+             <widget class="QLabel" name="slider_YZ">
+              <property name="text">
+               <string>slider</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="verticalSlider_YZ">
+              <property name="maximum">
+               <number>99</number>
+              </property>
+              <property name="sliderPosition">
+               <number>50</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="invertedAppearance">
+               <bool>false</bool>
+              </property>
+              <property name="invertedControls">
+               <bool>false</bool>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
@@ -844,6 +647,7 @@
      <string>File</string>
     </property>
     <addaction name="actionNew_3D_Canvas"/>
+    <addaction name="actionwriteOFF"/>
    </widget>
    <addaction name="menuFile"/>
   </widget>
@@ -911,7 +715,7 @@
   </action>
   <action name="actionwriteOFF">
    <property name="text">
-    <string>writeOFF</string>
+    <string>Save as .off</string>
    </property>
   </action>
   <action name="actionNew_3D_Canvas">

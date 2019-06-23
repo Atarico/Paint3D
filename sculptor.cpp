@@ -248,7 +248,7 @@ void Sculptor::writeOFF(string filename)
     ofstream fout;
 
 
-    fout.open("./"+filename+".off");
+    fout.open(filename);
     if(fout.is_open() == false)
     {
         cout << "arquivo nao foi aberto\n";

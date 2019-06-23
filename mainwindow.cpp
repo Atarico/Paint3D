@@ -12,6 +12,8 @@
 #include "cutvoxel.h"
 #include "dialognewcanvas.h"
 #include <QColorDialog>
+#include <QFileDialog>
+#include <QSysInfo>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -22,14 +24,6 @@ MainWindow::MainWindow(QWidget *parent) :
     //Initializing our 3D sculptor with a standard dimension of 10x10x10.
     vector<GeometricFigure*> figs;
     sculptor = new Sculptor(10, 10, 10);
-    figs.push_back(new PutSphere(5, 5, 5, 3, 0.8, 0.1, 0.1, 1));
-    figs.push_back(new PutSphere(10, 10, 10, 5, 0.1, 0.1, 0.9, 0.1));
-    figs.push_back(new PutSphere(0, 10, 10, 5, 0.1, 0.1, 0.9, 0.1));
-    figs.push_back(new PutSphere(10, 0, 10, 5, 0.1, 0.9, 0.1, 0.1));
-    figs.push_back(new PutSphere(0, 0, 10, 5, 1, 1, 1, 0.1));
-    for(int i = 0; i< figs.size(); i++){
-        figs[i]->draw(*sculptor);
-    }
     //End of 3D sculptor initialization
 
 
@@ -114,38 +108,40 @@ MainWindow::MainWindow(QWidget *parent) :
             SLOT(drawSculptorYZ(int, int)));
 
     //Connections from buttons to brush type
-    connect(ui->pushButtonPutVoxel,
-            SIGNAL(clicked(bool)),
+    connect(ui->actionputvoxel,
+            SIGNAL(triggered(bool)),
             this,
             SLOT(selectPutVoxel()));
-    connect(ui->pushButtonCutVoxel,
-            SIGNAL(clicked(bool)),
+    connect(ui->actioncutvoxel,
+            SIGNAL(triggered(bool)),
             this,
             SLOT(selectCutVoxel()));
-    connect(ui->pushButtonPutBox,
-            SIGNAL(clicked(bool)),
+    connect(ui->actionputbox,
+            SIGNAL(triggered(bool)),
             this,
             SLOT(selectPutBox()));
-    connect(ui->pushButtonCutBox,
-            SIGNAL(clicked(bool)),
+    connect(ui->actioncutbox,
+            SIGNAL(triggered(bool)),
             this,
             SLOT(selectCutBox()));
-    connect(ui->pushButtonPutSphere,
-            SIGNAL(clicked(bool)),
+    connect(ui->actionputsphere,
+            SIGNAL(triggered(bool)),
             this,
             SLOT(selectPutSphere()));
-    connect(ui->pushButtonCutSphere,
-            SIGNAL(clicked(bool)),
+    connect(ui->actioncutsphere,
+            SIGNAL(triggered(bool)),
             this,
             SLOT(selectCutSphere()));
-    connect(ui->pushButtonPutEllipsoid,
-            SIGNAL(clicked(bool)),
+    connect(ui->actionputellipsoid,
+            SIGNAL(triggered(bool)),
             this,
             SLOT(selectPutEllipsoid()));
-    connect(ui->pushButtonCutEllipsoid,
-            SIGNAL(clicked(bool)),
+    connect(ui->actioncutellipsoid,
+            SIGNAL(triggered(bool)),
             this,
             SLOT(selectCutEllipsoid()));
+
+    //Connecting the color picking button to it's popup
     connect(ui->pushButtonColor,
             SIGNAL(clicked(bool)),
             this,
@@ -157,6 +153,10 @@ MainWindow::MainWindow(QWidget *parent) :
             this,
             SLOT(setDimSculptor()));
 
+    connect(ui->actionwriteOFF,
+            SIGNAL(triggered(bool)),
+            this,
+            SLOT(writeOFF()));
 
 }
 
@@ -329,4 +329,26 @@ void MainWindow::mudaCor()
     r=r/255.0;
     g=g/255.0;
     b=b/255.0;
+}
+
+void MainWindow::writeOFF()
+{
+    QString fileName;
+
+    std::cout<<QSysInfo::productType().toStdString();
+
+    qDebug("OS: " + QSysInfo::productType().toLatin1() + "\n");
+
+    if(QSysInfo::productType() == "windows"){
+        fileName = QFileDialog::getSaveFileName(this, tr("Save File"),
+                                   "./untitled.off",
+                                   tr("OFF (*.off)"));
+    }
+    else if(QSysInfo::productType() == "ubuntu"){
+        fileName = QFileDialog::getSaveFileName(this, tr("Save File"),
+                                   "./untitled.off",
+                                   tr("OFF (*.off)"));
+    }
+
+    (*sculptor).writeOFF(fileName.toStdString());
 }

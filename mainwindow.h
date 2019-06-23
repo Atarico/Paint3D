@@ -86,6 +86,10 @@ public slots:
      * \brief Seleciona a cor da figuras que serão desenhadas.
      */
     void mudaCor();
+    /*!
+     * \brief Escreve a matriz de voxels em um arquivo .off de visualização 3D.
+     */
+    void writeOFF();
 
 private:
     Ui::MainWindow *ui;
