@@ -18,18 +18,54 @@ private:
     bool lmbPressed = false;
 public:
     explicit Plotter(QWidget *parent = nullptr);
-
+    /*!
+     * \brief Emite o sinal clickX , clickY e clickXY para o plot em lcd number e para dar as coordenadas desenho no arrasto do mouse.
+     * \param event
+     */
     void mouseMoveEvent(QMouseEvent *event);
+    /*!
+     * \brief Emite o sinal clickX , clickY e clickXY para dar as coordenadas de início do desenho.
+     * \param event
+     */
     void mousePressEvent(QMouseEvent *event);
+    /*!
+     * \brief Sinaliza o ponto de  finalizar o desenho.
+     * \param event
+     */
     void mouseReleaseEvent(QMouseEvent *event);
+    /*!
+     * \brief  Prepara e desenha no plotter a imagem gerada de cada plano XY, XZ e YZ.
+     * \param event
+     */
     void paintEvent(QPaintEvent *event);
+    /*!
+     * \brief define onde deve ser desenhado cada plano nos plotter XY, XZ e YZ.
+     * \param sculpt
+     * \param plane
+     * \param depth
+     */
     void paintMatrix(Sculptor *sculpt, int plane, int depth);
 
 signals:
+    /*!
+     * \brief Sinais de movimento do eixo X.
+     */
     void moveX(int);
+    /*!
+     * \brief Sinais de movimento do eixo Y.
+     */
     void moveY(int);
+    /*!
+     * \brief Sinais de click do eixo X.
+     */
     void clickX(int);
+    /*!
+     * \brief Sinais de click do eixo Y.
+     */
     void clickY(int);
+    /*!
+     * \brief Sinais de click do eixo X e Y.
+     */
     void clickXY(int, int);
 
 public slots:

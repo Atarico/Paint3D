@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Painter3D: Código-Fonte de putellipsoid.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Painter3D
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+   <div id="projectbrief">A C++ project that allows creation of .OFF colored voxels with a interative layout.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">putellipsoid.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="putellipsoid_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PUTELLIPSOID_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PUTELLIPSOID_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geometricfigure_8h.html">geometricfigure.h</a>&quot;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="class_put_ellipsoid.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_put_ellipsoid.html">PutEllipsoid</a> : <span class="keyword">public</span> <a class="code" href="class_geometric_figure.html">GeometricFigure</a></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">protected</span>:</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_put_ellipsoid.html#a2cb4da28d144462b4948ea56bb966d03">    8</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_put_ellipsoid.html#ab0bbb7252f3e0dc9d7cdd8e01df14935">xcenter</a>, <a class="code" href="class_put_ellipsoid.html#a3020ba6a4020b25173756101b33e07ac">ycenter</a>, <a class="code" href="class_put_ellipsoid.html#a2cb4da28d144462b4948ea56bb966d03">zcenter</a>, <a class="code" href="class_put_ellipsoid.html#a01c481bb5441245c5e8e879681899d56">rx</a>, <a class="code" href="class_put_ellipsoid.html#a4f4274c00346b59e57154b23df712bd4">ry</a>, <a class="code" href="class_put_ellipsoid.html#aaf53d3f0093a1ab471f78da1c24a3606">rz</a>;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_put_ellipsoid.html#ae759911423fc706908c60f284638a9c8">    9</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_put_ellipsoid.html#ae759911423fc706908c60f284638a9c8">r</a>, <a class="code" href="class_put_ellipsoid.html#ad9c02c0b1daeca4232e0f19f06255a51">g</a>, <a class="code" href="class_put_ellipsoid.html#adfbc6f752055ea68b0301411650206f0">b</a>, <a class="code" href="class_put_ellipsoid.html#aa48925e12207b716661df02a15c16296">a</a>;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_put_ellipsoid.html#a2af38a6e221e5b5163d0a30597594f44">PutEllipsoid</a>(<span class="keywordtype">int</span> _xcenter, <span class="keywordtype">int</span> _ycenter, <span class="keywordtype">int</span> _zcenter, <span class="keywordtype">int</span> _rx, <span class="keywordtype">int</span> _ry, <span class="keywordtype">int</span> _rz, <span class="keywordtype">float</span> _r, <span class="keywordtype">float</span> _g, <span class="keywordtype">float</span> _b, <span class="keywordtype">float</span> _a);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_put_ellipsoid.html#a2a82dd453d32a966218d3bea49406872">~PutEllipsoid</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_put_ellipsoid.html#a961faff306dad93a4b68a35ad9c3027b">draw</a>(<a class="code" href="class_sculptor.html">Sculptor</a> &amp;t);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif // PUTELLIPSOID_H</span></div><div class="ttc" id="class_put_ellipsoid_html_a01c481bb5441245c5e8e879681899d56"><div class="ttname"><a href="class_put_ellipsoid.html#a01c481bb5441245c5e8e879681899d56">PutEllipsoid::rx</a></div><div class="ttdeci">int rx</div><div class="ttdef"><b>Definition:</b> putellipsoid.h:8</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_a3020ba6a4020b25173756101b33e07ac"><div class="ttname"><a href="class_put_ellipsoid.html#a3020ba6a4020b25173756101b33e07ac">PutEllipsoid::ycenter</a></div><div class="ttdeci">int ycenter</div><div class="ttdef"><b>Definition:</b> putellipsoid.h:8</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_a2a82dd453d32a966218d3bea49406872"><div class="ttname"><a href="class_put_ellipsoid.html#a2a82dd453d32a966218d3bea49406872">PutEllipsoid::~PutEllipsoid</a></div><div class="ttdeci">~PutEllipsoid()</div><div class="ttdef"><b>Definition:</b> putellipsoid.cpp:16</div></div>
+<div class="ttc" id="class_put_ellipsoid_html"><div class="ttname"><a href="class_put_ellipsoid.html">PutEllipsoid</a></div><div class="ttdef"><b>Definition:</b> putellipsoid.h:5</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_a2af38a6e221e5b5163d0a30597594f44"><div class="ttname"><a href="class_put_ellipsoid.html#a2af38a6e221e5b5163d0a30597594f44">PutEllipsoid::PutEllipsoid</a></div><div class="ttdeci">PutEllipsoid(int _xcenter, int _ycenter, int _zcenter, int _rx, int _ry, int _rz, float _r, float _g, float _b, float _a)</div><div class="ttdoc">Ativa todos os voxels que satisfazem à equação da elipsoide e atribui aos mesmos a cor atual de desen...</div><div class="ttdef"><b>Definition:</b> putellipsoid.cpp:3</div></div>
+<div class="ttc" id="class_sculptor_html"><div class="ttname"><a href="class_sculptor.html">Sculptor</a></div><div class="ttdef"><b>Definition:</b> sculptor.h:20</div></div>
+<div class="ttc" id="geometricfigure_8h_html"><div class="ttname"><a href="geometricfigure_8h.html">geometricfigure.h</a></div></div>
+<div class="ttc" id="class_put_ellipsoid_html_a2cb4da28d144462b4948ea56bb966d03"><div class="ttname"><a href="class_put_ellipsoid.html#a2cb4da28d144462b4948ea56bb966d03">PutEllipsoid::zcenter</a></div><div class="ttdeci">int zcenter</div><div class="ttdef"><b>Definition:</b> putellipsoid.h:8</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_ab0bbb7252f3e0dc9d7cdd8e01df14935"><div class="ttname"><a href="class_put_ellipsoid.html#ab0bbb7252f3e0dc9d7cdd8e01df14935">PutEllipsoid::xcenter</a></div><div class="ttdeci">int xcenter</div><div class="ttdef"><b>Definition:</b> putellipsoid.h:8</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_adfbc6f752055ea68b0301411650206f0"><div class="ttname"><a href="class_put_ellipsoid.html#adfbc6f752055ea68b0301411650206f0">PutEllipsoid::b</a></div><div class="ttdeci">float b</div><div class="ttdef"><b>Definition:</b> putellipsoid.h:9</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_ad9c02c0b1daeca4232e0f19f06255a51"><div class="ttname"><a href="class_put_ellipsoid.html#ad9c02c0b1daeca4232e0f19f06255a51">PutEllipsoid::g</a></div><div class="ttdeci">float g</div><div class="ttdef"><b>Definition:</b> putellipsoid.h:9</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_aa48925e12207b716661df02a15c16296"><div class="ttname"><a href="class_put_ellipsoid.html#aa48925e12207b716661df02a15c16296">PutEllipsoid::a</a></div><div class="ttdeci">float a</div><div class="ttdef"><b>Definition:</b> putellipsoid.h:9</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_aaf53d3f0093a1ab471f78da1c24a3606"><div class="ttname"><a href="class_put_ellipsoid.html#aaf53d3f0093a1ab471f78da1c24a3606">PutEllipsoid::rz</a></div><div class="ttdeci">int rz</div><div class="ttdef"><b>Definition:</b> putellipsoid.h:8</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_ae759911423fc706908c60f284638a9c8"><div class="ttname"><a href="class_put_ellipsoid.html#ae759911423fc706908c60f284638a9c8">PutEllipsoid::r</a></div><div class="ttdeci">float r</div><div class="ttdef"><b>Definition:</b> putellipsoid.h:9</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_a4f4274c00346b59e57154b23df712bd4"><div class="ttname"><a href="class_put_ellipsoid.html#a4f4274c00346b59e57154b23df712bd4">PutEllipsoid::ry</a></div><div class="ttdeci">int ry</div><div class="ttdef"><b>Definition:</b> putellipsoid.h:8</div></div>
+<div class="ttc" id="class_geometric_figure_html"><div class="ttname"><a href="class_geometric_figure.html">GeometricFigure</a></div><div class="ttdoc">The GeometricFigure class is an abstract class that serves as a template to all other geometric figur...</div><div class="ttdef"><b>Definition:</b> geometricfigure.h:10</div></div>
+<div class="ttc" id="class_put_ellipsoid_html_a961faff306dad93a4b68a35ad9c3027b"><div class="ttname"><a href="class_put_ellipsoid.html#a961faff306dad93a4b68a35ad9c3027b">PutEllipsoid::draw</a></div><div class="ttdeci">void draw(Sculptor &amp;t)</div><div class="ttdoc">Ativa voxels selecionados no PutEllipsoid.</div><div class="ttdef"><b>Definition:</b> putellipsoid.cpp:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>
