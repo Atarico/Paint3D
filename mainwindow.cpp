@@ -23,7 +23,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //Initializing our 3D sculptor with a standard dimension of 10x10x10.
     vector<GeometricFigure*> figs;
-    sculptor = new Sculptor(10, 10, 10);
+    sculptor = new Sculptor(5, 5, 5);
+//    figs.push_back(new PutBox(0,5,0,10,0,10,0,0,1,1));
+//    for(int i = 0; i< figs.size(); i++){
+//        figs[i]->draw(*sculptor);
+//    }
     //End of 3D sculptor initialization
 
 
@@ -185,6 +189,8 @@ void MainWindow::drawPlane()
     ui->plotter_XY->paintMatrix(sculptor, XY, ui->verticalSlider_XY->value());
     ui->plotter_XZ->paintMatrix(sculptor, XZ, ui->verticalSlider_XZ->value());
     ui->plotter_YZ->paintMatrix(sculptor, YZ, ui->verticalSlider_YZ->value());
+
+    ui->plotter_3D->paintMatrix3D(sculptor);
 
     ui->slider_XY->setText(QString::number(int(ui->verticalSlider_XY->value()/(100.0/sculptor->getNz()))));
     ui->slider_XZ->setText(QString::number(int(ui->verticalSlider_XZ->value()/(100.0/sculptor->getNy()))));

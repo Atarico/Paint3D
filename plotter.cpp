@@ -106,7 +106,7 @@ void Plotter::paintEvent(QPaintEvent *event)
     }
 
 
-            //a relation betwen our smaller pixel axis and our longest voxel axis to be used as a drawing unit.
+    //a relation betwen our smaller pixel axis and our longest voxel axis to be used as a drawing unit.
     normalizao=normSize;
     QPoint *plottingStart = new QPoint(width()/2 - normSize*sizeH/2, height()/2 - normSize*sizeV/2); //defines the 2D point at which we will start painting our voxels.
     plotStart=plottingStart;
@@ -121,7 +121,6 @@ void Plotter::paintEvent(QPaintEvent *event)
 
                 pen.setColor(QColor(150,150,150));
                 pen.setWidth(1);
-                //pen.setStyle(Qt::DashLine);
                 p.setPen(pen);
 
                 p.drawRect(i*normSize + plottingStart->x(), j*normSize + plottingStart->y(),

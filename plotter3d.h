@@ -15,6 +15,14 @@ public:
 
     void paintEvent(QPaintEvent *event);
     void paintMatrix3D(Sculptor *sculpt);
+
+    /*!
+     * \brief Cria um objeto QPolygon que desenha um cubo translucido e o retorna.
+     * \param x
+     * \param y
+     * \param size
+     */
+    void drawCube(QPainter *painter,  QBrush *brush, QPen *pen,  int x, int y, int size);
 signals:
 
 public slots:
