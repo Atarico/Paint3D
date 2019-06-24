@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->plotter_XY->paintMatrix( sculptor, XY, 50 );
     ui->plotter_XZ->paintMatrix( sculptor, XZ, 50 );
     ui->plotter_YZ->paintMatrix( sculptor, YZ, 50 );
+    ui->plotter_3D->paintMatrix3D(sculptor);
 
     //Connecting plotter dimensions to labels
     ui->label_XY_H->setText("X: "+QString::number(sculptor->getNx()));
@@ -81,7 +82,7 @@ MainWindow::MainWindow(QWidget *parent) :
             this,
             SLOT(drawPlane()));
 
-    ui->plotter_3D->paintMatrix3D(sculptor);
+
 
 
     //Connections from plotter to lcdNumber
@@ -130,6 +131,22 @@ MainWindow::MainWindow(QWidget *parent) :
             SIGNAL(clickXY(int, int)),
             this,
             SLOT(drawSculptorYZ(int, int)));
+
+    //Connections from movint the mouse in the plotting widgets to the SLOT that draws a "voxel mouse"
+    connect(ui->plotter_XY,
+            SIGNAL(moveXY(int, int)),
+            this,
+            SLOT(drawMouseVoxelXY(int, int)));
+
+    connect(ui->plotter_XZ,
+            SIGNAL(moveXY(int, int)),
+            this,
+            SLOT(drawMouseVoxelXZ(int, int)));
+
+    connect(ui->plotter_YZ,
+            SIGNAL(moveXY(int, int)),
+            this,
+            SLOT(drawMouseVoxelYZ(int, int)));
 
     //Connections from buttons to brush type
     connect(ui->actionputvoxel,
@@ -301,6 +318,27 @@ void MainWindow::drawFigure(int x0, int y0, int z0, int brush)
         figs[i]->draw(*sculptor);
     }
     this->drawPlane();
+}
+
+void MainWindow::drawMouseVoxelXY(int x0, int y0)
+{
+    float sliderZ0 = float(ui->verticalSlider_XY->value())/100;
+    int z0 = sliderZ0*sculptor->getNz();
+    ui->plotter_3D->paintMatrix3D(sculptor, x0+1, y0+1, z0+1);
+}
+
+void MainWindow::drawMouseVoxelXZ(int x0, int z0)
+{
+    float sliderY0 = float(ui->verticalSlider_XZ->value())/100;
+    int y0 = sliderY0*sculptor->getNy();
+    ui->plotter_3D->paintMatrix3D(sculptor, x0+1, y0+1, z0+1);
+}
+
+void MainWindow::drawMouseVoxelYZ(int y0, int z0)
+{
+    float sliderX0 = float(ui->verticalSlider_YZ->value())/100;
+    int x0 = sliderX0*sculptor->getNx();
+    ui->plotter_3D->paintMatrix3D(sculptor, x0+1, y0+1, z0+1);
 }
 
 

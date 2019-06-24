@@ -23,6 +23,8 @@ Plotter::Plotter(QWidget *parent) : QWidget(parent)
 }
 
 void Plotter::mouseMoveEvent(QMouseEvent *event){
+    emit moveXY((event->x() - (plotStart->x()))/normalizao, (event->y()- (plotStart->y()))/normalizao);
+
     emit clickX((event->x() - (plotStart->x()))/normalizao);
     emit clickY((event->y()- (plotStart->y()))/normalizao);
     if(lmbPressed){

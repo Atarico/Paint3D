@@ -48,13 +48,9 @@ public:
 
 signals:
     /*!
-     * \brief Sinais de movimento do eixo X.
+     * \brief Sinais de movimento dos eixos X e Y.
      */
-    void moveX(int);
-    /*!
-     * \brief Sinais de movimento do eixo Y.
-     */
-    void moveY(int);
+    void moveXY(int, int);
     /*!
      * \brief Sinais de click do eixo X.
      */

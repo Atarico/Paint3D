@@ -10,11 +10,12 @@ class Plotter3d : public QWidget
     Q_OBJECT
 private:
     vector<vector<vector<Voxel>>> plane3D;
+    int x0 = NULL, y0 = NULL, z0 = NULL;
 public:
     explicit Plotter3d(QWidget *parent = nullptr);
 
     void paintEvent(QPaintEvent *event);
-    void paintMatrix3D(Sculptor *sculpt);
+    void paintMatrix3D(Sculptor *sculpt, int x0 = NULL, int y0 = NULL, int z0 = NULL);
 
     /*!
      * \brief Cria um objeto QPolygon que desenha um cubo translucido e o retorna.

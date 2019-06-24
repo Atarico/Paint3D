@@ -23,9 +23,16 @@ Plotter3d::Plotter3d(QWidget *parent) : QWidget(parent)
 
 }
 
-void Plotter3d::paintMatrix3D(Sculptor *sculpt)
+void Plotter3d::paintMatrix3D(Sculptor *sculpt, int x0, int y0, int z0)
 {
     plane3D = sculpt->plane3D();
+
+    if(!(x0 == NULL) && !(y0 == NULL) && !(z0 == NULL)){
+        this->x0 = x0;
+        this->y0 = y0;
+        this->z0 = z0;
+    }
+
     repaint();
 }
 
@@ -145,7 +152,26 @@ void Plotter3d::paintEvent(QPaintEvent *event)
 
                     drawCube(&p, &brush, &pen, j*normSize + plottingStart->x(), k*normSize + plottingStart->y(), normSize);
                 }
+
+                if(!(x0 == NULL) && !(y0 == NULL) && !(z0 == NULL)){
+                    if(i==x0-1 && j==y0-1 && k==z0-1){
+                        brush.setColor(QColor(66, 190, 245, 120));
+                        brush.setStyle(Qt::SolidPattern);
+                        p.setBrush(brush);
+
+                        pen.setColor(QColor(66, 190, 245));
+                        pen.setWidth(2);
+                        pen.setStyle(Qt::SolidLine);
+                        p.setPen(pen);
+
+                        drawCube(&p, &brush, &pen, j*normSize + plottingStart->x(), k*normSize + plottingStart->y(), normSize);
+                    }
+                }
             }
         }
     }
+
+    this->x0 = NULL;
+    this->y0 = NULL;
+    this->z0 = NULL;
 }

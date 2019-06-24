@@ -51,6 +51,18 @@ public slots:
      */
     void drawFigure(int x0, int y0, int z0, int brush);
     /*!
+     * \brief Desenha um voxel na posicao XYZ do mouse.
+     */
+    void drawMouseVoxelXY(int, int);
+    /*!
+     * \brief Desenha um voxel na posicao XYZ do mouse.
+     */
+    void drawMouseVoxelXZ(int, int);
+    /*!
+     * \brief Desenha um voxel na posicao XYZ do mouse.
+     */
+    void drawMouseVoxelYZ(int, int);
+    /*!
      * \brief Seleciona o método PutVoxel para o desenho.
      */
     void selectPutVoxel();
