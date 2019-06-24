@@ -47,7 +47,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEditDimX"/>
+          <widget class="QLineEdit" name="lineEditDimX">
+           <property name="text">
+            <string>10</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -61,7 +65,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEditDimY"/>
+          <widget class="QLineEdit" name="lineEditDimY">
+           <property name="text">
+            <string>10</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -75,7 +83,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEditDimZ"/>
+          <widget class="QLineEdit" name="lineEditDimZ">
+           <property name="text">
+            <string>10</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

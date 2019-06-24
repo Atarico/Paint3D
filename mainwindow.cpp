@@ -22,12 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     //Initializing our 3D sculptor with a standard dimension of 10x10x10.
-    vector<GeometricFigure*> figs;
-    sculptor = new Sculptor(5, 5, 5);
-//    figs.push_back(new PutBox(0,5,0,10,0,10,0,0,1,1));
-//    for(int i = 0; i< figs.size(); i++){
-//        figs[i]->draw(*sculptor);
-//    }
+    sculptor = new Sculptor(10, 10, 10);
     //End of 3D sculptor initialization
 
 
@@ -35,15 +30,40 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->plotter_XZ->paintMatrix( sculptor, XZ, 50 );
     ui->plotter_YZ->paintMatrix( sculptor, YZ, 50 );
 
-    //connecting plotter dimensions to labels
-    ui->label_XY_H->setText(QString::number(sculptor->getNx()));
-    ui->label_XY_V->setText(QString::number(sculptor->getNy()));
+    //Connecting plotter dimensions to labels
+    ui->label_XY_H->setText("X: "+QString::number(sculptor->getNx()));
+    ui->label_XY_V->setText("Y: "+QString::number(sculptor->getNy()));
 
-    ui->label_XZ_H->setText(QString::number(sculptor->getNx()));
-    ui->label_XZ_V->setText(QString::number(sculptor->getNz()));
+    ui->label_XZ_H->setText("X: "+QString::number(sculptor->getNx()));
+    ui->label_XZ_V->setText("Z: "+QString::number(sculptor->getNz()));
 
-    ui->label_YZ_H->setText(QString::number(sculptor->getNy()));
-    ui->label_YZ_V->setText(QString::number(sculptor->getNz()));
+    ui->label_YZ_H->setText("Y: "+QString::number(sculptor->getNy()));
+    ui->label_YZ_V->setText("Z: "+QString::number(sculptor->getNz()));
+
+    //Connecting brush colors to labels
+    ui->label_Red->setText("Red: "+QString::number(r*255));
+    ui->label_Green->setText("Green: "+QString::number(g*255));
+    ui->label_Blue->setText("Blue: "+QString::number(b*255));
+    ui->label_Alpha->setText("Alpha: "+QString::number(a*255));
+
+    //Connections from the RGBA sliders
+    connect(ui->horizontalSliderRed,
+            SIGNAL(valueChanged(int)),
+            this,
+            SLOT(redSliderChangeColor(int)));
+    connect(ui->horizontalSliderGreen,
+            SIGNAL(valueChanged(int)),
+            this,
+            SLOT(greenSliderChangeColor(int)));
+    connect(ui->horizontalSliderBlue,
+            SIGNAL(valueChanged(int)),
+            this,
+            SLOT(blueSliderChangeColor(int)));
+    connect(ui->horizontalSliderAlpha,
+            SIGNAL(valueChanged(int)),
+            this,
+            SLOT(alphaSliderChangeColor(int)));
+
 
     //Connections from the depth sliders to the SLOT that draws our matrixes on their plotters
     connect(ui->verticalSlider_XY,
@@ -197,14 +217,14 @@ void MainWindow::drawPlane()
     ui->slider_YZ->setText(QString::number(int(ui->verticalSlider_YZ->value()/(100.0/sculptor->getNx()))));
 
     //connecting plotter dimensions to labels
-    ui->label_XY_H->setText(QString::number(sculptor->getNx()));
-    ui->label_XY_V->setText(QString::number(sculptor->getNy()));
+    ui->label_XY_H->setText("X: "+QString::number(sculptor->getNx()));
+    ui->label_XY_V->setText("Y: "+QString::number(sculptor->getNy()));
 
-    ui->label_XZ_H->setText(QString::number(sculptor->getNx()));
-    ui->label_XZ_V->setText(QString::number(sculptor->getNz()));
+    ui->label_XZ_H->setText("X: "+QString::number(sculptor->getNx()));
+    ui->label_XZ_V->setText("Z: "+QString::number(sculptor->getNz()));
 
-    ui->label_YZ_H->setText(QString::number(sculptor->getNy()));
-    ui->label_YZ_V->setText(QString::number(sculptor->getNz()));
+    ui->label_YZ_H->setText("Y: "+QString::number(sculptor->getNy()));
+    ui->label_YZ_V->setText("Z: "+QString::number(sculptor->getNz()));
 }
 
 void MainWindow::drawSculptorXY(int x0, int y0)
@@ -234,7 +254,7 @@ void MainWindow::drawFigure(int x0, int y0, int z0, int brush)
     vector<GeometricFigure*> figs;
 
     if(brush == putvoxel){
-        figs.push_back(new PutVoxel(x0,y0,z0,r,g,b,1));
+        figs.push_back(new PutVoxel(x0,y0,z0,r,g,b,a));
     }
     if(brush == cutvoxel){
         figs.push_back(new CutVoxel(x0,y0,z0));
@@ -246,7 +266,7 @@ void MainWindow::drawFigure(int x0, int y0, int z0, int brush)
                                   y0+((ui->lineEditRectangleSizeY->text()).toInt()/2),
                                   z0-((ui->lineEditRectangleSizeZ->text()).toInt()/2),
                                   z0+((ui->lineEditRectangleSizeZ->text()).toInt()/2),
-                                  r,g,b,1));
+                                  r,g,b,a));
     }
     if(brush == cutbox){
         figs.push_back(new CutBox(x0-((ui->lineEditRectangleSizeX->text()).toInt()/2),
@@ -257,7 +277,7 @@ void MainWindow::drawFigure(int x0, int y0, int z0, int brush)
                                   z0+((ui->lineEditRectangleSizeZ->text()).toInt()/2)));
     }
     if(brush == putsphere){
-        figs.push_back(new PutSphere(x0, y0, z0, (ui->lineEditSphereRadius->text()).toInt(), r, g, b, 1));
+        figs.push_back(new PutSphere(x0, y0, z0, (ui->lineEditSphereRadius->text()).toInt(), r, g, b, a));
     }
     if(brush == cutsphere){
         figs.push_back(new CutSphere(x0, y0, z0, (ui->lineEditSphereRadius->text()).toInt()));
@@ -269,7 +289,7 @@ void MainWindow::drawFigure(int x0, int y0, int z0, int brush)
                                         (ui->lineEditElipsoidRadiusX->text()).toInt(),
                                         (ui->lineEditElipsoidRadiusY->text()).toInt(),
                                         (ui->lineEditElipsoidRadiusZ->text()).toInt(),
-                                        r,g,b,1));
+                                        r,g,b,a));
     }
     if(brush == cutellipsoid){
         figs.push_back(new CutEllipsoid(x0, y0, z0,
@@ -332,9 +352,59 @@ void MainWindow::mudaCor()
     r = color.red();
     g = color.green();
     b = color.blue();
+    a = color.alpha();
+
+    ui->displayColor->changeColor(r,g,b,a);
+
     r=r/255.0;
     g=g/255.0;
     b=b/255.0;
+    a=a/255.0;
+
+    //Connecting brush colors to labels and sliders
+    ui->label_Red->setText("Red: "+QString::number(r*255));
+    ui->horizontalSliderRed->setValue(r*100);
+
+    ui->label_Green->setText("Green: "+QString::number(g*255));
+    ui->horizontalSliderGreen->setValue(g*100);
+
+    ui->label_Blue->setText("Blue: "+QString::number(b*255));
+    ui->horizontalSliderBlue->setValue(b*100);
+
+    ui->label_Alpha->setText("Alpha: "+QString::number(a*255));
+    ui->horizontalSliderAlpha->setValue(a*100);
+}
+
+void MainWindow::redSliderChangeColor(int slider)
+{
+    float aux = slider/100.0;
+    r = aux;
+    ui->displayColor->changeColor(r*255,g*255,b*255,a*255);
+    ui->label_Red->setText("Red: "+QString::number(r*255));
+}
+
+void MainWindow::greenSliderChangeColor(int slider)
+{
+    float aux = slider/100.0;
+    g = aux;
+    ui->displayColor->changeColor(r*255,g*255,b*255,a*255);
+    ui->label_Green->setText("Green: "+QString::number(g*255));
+}
+
+void MainWindow::blueSliderChangeColor(int slider)
+{
+    float aux = slider/100.0;
+    b = aux;
+    ui->displayColor->changeColor(r*255,g*255,b*255,a*255);
+    ui->label_Blue->setText("Blue: "+QString::number(b*255));
+}
+
+void MainWindow::alphaSliderChangeColor(int slider)
+{
+    float aux = slider/100.0;
+    a = aux;
+    ui->displayColor->changeColor(r*255,g*255,b*255,a*255);
+    ui->label_Alpha->setText("Alpha: "+QString::number(a*255));
 }
 
 void MainWindow::writeOFF()

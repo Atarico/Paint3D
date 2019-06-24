@@ -71,6 +71,8 @@ void Plotter3d::paintEvent(QPaintEvent *event)
     QPen pen;
     QBrush brush;
 
+    p.setRenderHint(QPainter::Antialiasing);
+
     // preparando a caneta
     pen.setColor(QColor(150,150,150));
     pen.setWidth(4);
@@ -91,15 +93,14 @@ void Plotter3d::paintEvent(QPaintEvent *event)
     pen.setDashOffset(3);
     p.setPen(pen);
 
+    //Defining the sizes of our voxel matrix
     int sizeX = int(plane3D.size());
     int sizeY = int(plane3D[0].size());
     int sizeZ = int(plane3D[0][0].size());
 
+    //A bunch of calculations to determine where to start drawing, the size of our cubes, etc.
     double totalVoxelSizeH =double(sizeZ+double(sizeX*cos45/2));
     double totalVoxelSizeV =double(sizeZ+double(sizeX*cos45/2));
-
-    qDebug("%f \n", totalVoxelSizeH);
-    qDebug("%f \n", totalVoxelSizeV);
 
     double normSizeH = width()/totalVoxelSizeH;
     double normSizeV = height()/totalVoxelSizeV;
@@ -114,11 +115,15 @@ void Plotter3d::paintEvent(QPaintEvent *event)
 
     double voxelSizeH = normSize*sizeZ;
 
+    //Starting point to our plotting
     QPoint *plottingStart = new QPoint(width()/2 - normSize*totalVoxelSizeH/2 + (normSize*totalVoxelSizeH-voxelSizeH), height()/2 - normSize*totalVoxelSizeV/2); //defines the 2D point at which we will start painting our voxels.
 
 
     for(int i=0; i<sizeX; i++)
     {
+        //This if statement makes plottingStart jump between each layer of our 3D painting,
+        //so that the layers in front have a displacement in relation to the layer behind it,
+        //creating the illusion of three dimensional space.
         if(i!=0){
             plottingStart->setX(plottingStart->x() - normSize*cos45/2);
             plottingStart->setY(plottingStart->y() + normSize*cos45/2);
@@ -129,7 +134,7 @@ void Plotter3d::paintEvent(QPaintEvent *event)
             for(int k=sizeZ-1; k>=0; k--)
             {
                 if(plane3D[i][j][k].isOn){
-                    brush.setColor(QColor(plane3D[i][j][k].r*255,plane3D[i][j][k].g*255,plane3D[i][j][k].b*255));
+                    brush.setColor(QColor(plane3D[i][j][k].r*255,plane3D[i][j][k].g*255,plane3D[i][j][k].b*255,plane3D[i][j][k].a*255));
                     brush.setStyle(Qt::SolidPattern);
                     p.setBrush(brush);
 

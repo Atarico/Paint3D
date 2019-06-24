@@ -83,9 +83,26 @@ public slots:
      */
     void selectCutEllipsoid();
     /*!
-     * \brief Seleciona a cor da figuras que serão desenhadas.
+     * \brief Seleciona a cor das figuras que serão desenhadas.
      */
     void mudaCor();
+    /*!
+     * \brief Seleciona a cor vermelha da figura usando o slider.
+     */
+    void redSliderChangeColor(int);
+    /*!
+     * \brief Seleciona a cor verde da figura usando o slider.
+     */
+    void greenSliderChangeColor(int);
+    /*!
+     * \brief Seleciona a cor azul da figura usando o slider.
+     */
+    void blueSliderChangeColor(int);
+    /*!
+     * \brief Seleciona o alpha da figura usando o slider.
+     */
+    void alphaSliderChangeColor(int);
+
     /*!
      * \brief Escreve a matriz de voxels em um arquivo .off de visualização 3D.
      */
@@ -96,7 +113,7 @@ private:
     Sculptor *sculptor;
     int brush = putvoxel;
     int color;
-    float r = 1,g = 1,b = 1;
+    float r = 1,g = 1,b = 1, a = 1;
 
 };
 

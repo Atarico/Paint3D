@@ -13,6 +13,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    colordisplay.cpp \
     dialognewcanvas.cpp \
         mainwindow.cpp \
     cutbox.cpp \
@@ -29,6 +30,7 @@ SOURCES += main.cpp\
     sculptor.cpp
 
 HEADERS  += mainwindow.h \
+    colordisplay.h \
     cutbox.h \
     cutellipsoid.h \
     cutsphere.h \
