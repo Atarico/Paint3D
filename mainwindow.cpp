@@ -345,35 +345,113 @@ void MainWindow::drawMouseVoxelYZ(int y0, int z0)
 //Selecting brush types
 void MainWindow::selectPutVoxel()
 {
-    brush = putvoxel;
+    if(ui->actionputvoxel->isChecked()){
+        brush = putvoxel;
+    }
+    else {
+        brush = -1;
+    }
+
+    uncheckBrushButtons(brush);
+
 }
 void MainWindow::selectCutVoxel()
 {
-    brush = cutvoxel;
+    if(ui->actioncutvoxel->isChecked()){
+        brush = cutvoxel;
+    }
+    else {
+        brush = -1;
+    }
+    uncheckBrushButtons(brush);
 }
 void MainWindow::selectPutBox()
 {
-    brush = putbox;
+    if(ui->actionputbox->isChecked()){
+        brush = putbox;
+    }
+    else {
+        brush = -1;
+    }
+    uncheckBrushButtons(brush);
 }
 void MainWindow::selectCutBox()
 {
-    brush = cutbox;
+    if(ui->actioncutbox->isChecked()){
+        brush = cutbox;
+    }
+    else {
+        brush = -1;
+    }
+    uncheckBrushButtons(brush);
 }
 void MainWindow::selectPutSphere()
 {
-    brush = putsphere;
+    if(ui->actionputsphere->isChecked()){
+        brush = putsphere;
+    }
+    else {
+        brush = -1;
+    }
+    uncheckBrushButtons(brush);
 }
 void MainWindow::selectCutSphere()
 {
-    brush = cutsphere;
+    if(ui->actioncutsphere->isChecked()){
+        brush = cutsphere;
+    }
+    else {
+        brush = -1;
+    }
+    uncheckBrushButtons(brush);
 }
 void MainWindow::selectPutEllipsoid()
 {
-    brush = putellipsoid;
+    if(ui->actionputellipsoid->isChecked()){
+        brush = putellipsoid;
+    }
+    else {
+        brush = -1;
+    }
+    uncheckBrushButtons(brush);
 }
 void MainWindow::selectCutEllipsoid()
 {
-    brush = cutellipsoid;
+    if(ui->actioncutellipsoid->isChecked()){
+        brush = cutellipsoid;
+    }
+    else {
+        brush = -1;
+    }
+    uncheckBrushButtons(brush);
+}
+
+void MainWindow::uncheckBrushButtons(int brush)
+{
+    if(brush!=putvoxel){
+        ui->actionputvoxel->setChecked(false);
+    }
+    if(brush!=cutvoxel){
+        ui->actioncutvoxel->setChecked(false);
+    }
+    if(brush!=putbox){
+        ui->actionputbox->setChecked(false);
+    }
+    if(brush!=cutbox){
+        ui->actioncutbox->setChecked(false);
+    }
+    if(brush!=putsphere){
+        ui->actionputsphere->setChecked(false);
+    }
+    if(brush!=cutsphere){
+        ui->actioncutsphere->setChecked(false);
+    }
+    if(brush!=putellipsoid){
+        ui->actionputellipsoid->setChecked(false);
+    }
+    if(brush!=cutellipsoid){
+        ui->actioncutellipsoid->setChecked(false);
+    }
 }
 
 void MainWindow::mudaCor()
@@ -386,6 +464,9 @@ void MainWindow::mudaCor()
 
     QColor color;
     color= d.selectedColor();
+    if(!color.isValid()){
+        color = previousColor;
+    }
 
     r = color.red();
     g = color.green();
@@ -449,10 +530,6 @@ void MainWindow::writeOFF()
 {
     QString fileName;
 
-    std::cout<<QSysInfo::productType().toStdString();
-
-    qDebug("OS: " + QSysInfo::productType().toLatin1() + "\n");
-
     if(QSysInfo::productType() == "windows"){
         fileName = QFileDialog::getSaveFileName(this, tr("Save File"),
                                    "./untitled.off",
@@ -464,5 +541,7 @@ void MainWindow::writeOFF()
                                    tr("OFF (*.off)"));
     }
 
-    (*sculptor).writeOFF(fileName.toStdString());
+    if(fileName != NULL){
+        (*sculptor).writeOFF(fileName.toStdString());
+    }
 }

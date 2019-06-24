@@ -888,46 +888,76 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionputvoxel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>putvoxel</string>
    </property>
   </action>
   <action name="actioncutvoxel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>cutvoxel</string>
    </property>
   </action>
   <action name="actionputbox">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>putbox</string>
    </property>
   </action>
   <action name="actioncutbox">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>cutbox</string>
    </property>
   </action>
   <action name="actionputsphere">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>putsphere</string>
    </property>
   </action>
   <action name="actioncutsphere">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>cutsphere</string>
    </property>
   </action>
   <action name="actionputellipsoid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>putellipsoid</string>
    </property>
   </action>
   <action name="actioncutellipsoid">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>cutellipsoid</string>
    </property>
   </action>
   <action name="actionwriteOFF">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Save as .off</string>
    </property>

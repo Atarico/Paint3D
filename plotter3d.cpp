@@ -41,8 +41,8 @@ void Plotter3d::drawCube(QPainter *painter,  QBrush *brush, QPen *pen, int x, in
     painter->setBrush(*brush);
     painter->setPen(*pen);
 
-    QPainterPath pathTop, pathSide, pathFront;
-    QPolygon cubeTop, cubeSide, cubeFront;
+    QPainterPath pathTop, pathRight, pathFront, pathLeft, pathBehind;
+    QPolygon cubeTop, cubeRight, cubeFront, cubeLeft, cubeBehind;
     QPoint E, F, G, H, A, B, C, D;
 
     E = QPoint(x, y);
@@ -56,19 +56,25 @@ void Plotter3d::drawCube(QPainter *painter,  QBrush *brush, QPen *pen, int x, in
     D = QPoint(C.x()-size, C.y());
 
     cubeTop<<QPoint(A.x(),A.y()-1)<<E<<F<<QPoint(B.x(),B.y()-1)<<QPoint(A.x(),A.y()-1);
-    cubeSide<<QPoint(B.x()+1,B.y())<<F<<G<<QPoint(C.x()+1,C.y())<<QPoint(B.x()+1,B.y());
+    cubeRight<<QPoint(B.x()+1,B.y())<<F<<G<<QPoint(C.x()+1,C.y())<<QPoint(B.x()+1,B.y());
     cubeFront<<A<<B<<C<<D<<A;
+    cubeLeft<<A<<D<<H<<E<<A;
+    cubeBehind<<E<<F<<G<<H<<E;
 
     pathTop.addPolygon(cubeTop);
-    pathSide.addPolygon(cubeSide);
+    pathRight.addPolygon(cubeRight);
     pathFront.addPolygon(cubeFront);
+    pathLeft.addPolygon(cubeLeft);
+    pathBehind.addPolygon(cubeBehind);
 
+    painter->drawPolygon(cubeBehind);
+    painter->drawPolygon(cubeLeft);
     painter->drawPolygon(cubeTop);
-    painter->drawPolygon(cubeSide);
+    painter->drawPolygon(cubeRight);
     painter->drawPolygon(cubeFront);
 
     painter->fillPath(pathTop, *brush);
-    painter->fillPath(pathSide, *brush);
+    painter->fillPath(pathRight, *brush);
     painter->fillPath(pathFront, *brush);
 }
 

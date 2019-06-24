@@ -95,6 +95,10 @@ public slots:
      */
     void selectCutEllipsoid();
     /*!
+     * \brief Lida com os botões de escolha de brush, ativando e desativando-os a medida do necessário.
+     */
+    void uncheckBrushButtons(int brush);
+    /*!
      * \brief Seleciona a cor das figuras que serão desenhadas.
      */
     void mudaCor();
