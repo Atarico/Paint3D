@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['geometricfigure',['GeometricFigure',['../class_geometric_figure.html#ab650603d4dd0df6ce8235642e0fdbb20',1,'GeometricFigure']]],
-  ['getdimx',['getDimX',['../class_dialog_new_canvas.html#a3d0a6f16a4246a446d4fbba32c7bf962',1,'DialogNewCanvas']]],
-  ['getdimy',['getDimY',['../class_dialog_new_canvas.html#a4976087e20897a47dff1f8d8c2ed70fe',1,'DialogNewCanvas']]],
-  ['getdimz',['getDimZ',['../class_dialog_new_canvas.html#a95bf85a788be14857dc2fa25d4711e06',1,'DialogNewCanvas']]],
-  ['getnx',['getNx',['../class_sculptor.html#a9fa9452699877020a9fe9ac25452fb02',1,'Sculptor']]],
-  ['getny',['getNy',['../class_sculptor.html#a2b54a4cc5db32d0d774a029ca33da3d4',1,'Sculptor']]],
-  ['getnz',['getNz',['../class_sculptor.html#a8c46199d2ab46e8567edf508c91def1f',1,'Sculptor']]]
+  ['changecolor',['changeColor',['../classcolor_display.html#a872f1a155c1551de6fb449548fb033a5',1,'colorDisplay']]],
+  ['clickx',['clickX',['../class_plotter.html#a5062f8c5dac9e7c77b9bfa2206382146',1,'Plotter']]],
+  ['clickxy',['clickXY',['../class_plotter.html#a43909395c4676f0d84f8184ea3cb859c',1,'Plotter']]],
+  ['clicky',['clickY',['../class_plotter.html#a840086ff1d98fa8b868b40e1e70d7118',1,'Plotter']]],
+  ['colordisplay',['colorDisplay',['../classcolor_display.html#a8017739f5a6b53bb2e8a0b8980f47868',1,'colorDisplay']]],
+  ['cutbox',['CutBox',['../class_cut_box.html#afffb95f5ae0d48275bfe586bc92bdd04',1,'CutBox']]],
+  ['cutellipsoid',['CutEllipsoid',['../class_cut_ellipsoid.html#ad068974d7a56cbd150e384603f1ed0e5',1,'CutEllipsoid']]],
+  ['cutsphere',['CutSphere',['../class_cut_sphere.html#ae9d55f98d0100adde31f3f97d1d1ba50',1,'CutSphere']]],
+  ['cutvoxel',['CutVoxel',['../class_cut_voxel.html#a8b8ed10d003e44f945fbebe75c8f0622',1,'CutVoxel::CutVoxel()'],['../class_sculptor.html#ad9d714a35fc8ae16d06eb5df37c3493c',1,'Sculptor::cutVoxel()']]]
 ];

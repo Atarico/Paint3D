@@ -4,8 +4,8 @@ var indexSectionsWithContent =
   1: "cdgmpsv",
   2: "u",
   3: "cdgmprs",
-  4: "cdgmpsw~",
-  5: "abginrvxyz",
+  4: "abcdgmprsuw~",
+  5: "abcginrvxyz",
   6: "cpxy",
   7: "p"
 };
@@ -24,13 +24,13 @@ var indexSectionNames =
 
 var indexSectionLabels =
 {
-  0: "Todos",
+  0: "All",
   1: "Classes",
   2: "Namespaces",
-  3: "Arquivos",
-  4: "Funções",
-  5: "Variáveis",
-  6: "Enumeradores",
-  7: "Páginas"
+  3: "Files",
+  4: "Functions",
+  5: "Variables",
+  6: "Enumerator",
+  7: "Pages"
 };
 

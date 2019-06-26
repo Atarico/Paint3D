@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['z',['z',['../class_cut_voxel.html#a614f25963845556b8a105f14dddc1e98',1,'CutVoxel::z()'],['../class_put_voxel.html#a4639c451b0a04bac087741ac1bd247f5',1,'PutVoxel::z()']]],
-  ['z0',['z0',['../class_cut_box.html#afb2ac28e61b363d723cc1af03edb37f2',1,'CutBox::z0()'],['../class_put_box.html#a2d8e98d861c2bdd96d414d5af225f91e',1,'PutBox::z0()']]],
-  ['z1',['z1',['../class_cut_box.html#a77a90345c13a7efc02680c15a2e1d7f9',1,'CutBox::z1()'],['../class_put_box.html#a6a32b1e3333da311e22ecb177cb43fb8',1,'PutBox::z1()']]],
-  ['zcenter',['zcenter',['../class_cut_ellipsoid.html#adf1fbdd06519db7c450a9190e8ffd858',1,'CutEllipsoid::zcenter()'],['../class_cut_sphere.html#a06dd02da6f637b0de55d2e02aeb3b9af',1,'CutSphere::zcenter()'],['../class_put_ellipsoid.html#a2cb4da28d144462b4948ea56bb966d03',1,'PutEllipsoid::zcenter()'],['../class_put_sphere.html#a235b8425b2e1265a030c70f6c6ad7447',1,'PutSphere::zcenter()']]]
+  ['y',['y',['../class_cut_voxel.html#ae62d619cb2e91cddc1cd73053b1afc89',1,'CutVoxel::y()'],['../class_put_voxel.html#a570160947f9ef0a8f541e9cabb96d5f7',1,'PutVoxel::y()']]],
+  ['y0',['y0',['../class_cut_box.html#ab8bd7a8a94c1336daad8d808f5d62f68',1,'CutBox::y0()'],['../class_put_box.html#acc1b4deb4f10ebe0417e2da420e0d3d1',1,'PutBox::y0()']]],
+  ['y1',['y1',['../class_cut_box.html#acefed2c5a0564ea68946266f60018176',1,'CutBox::y1()'],['../class_put_box.html#a7153a65fd7cc6a387a09dbcaf1b2176c',1,'PutBox::y1()']]],
+  ['ycenter',['ycenter',['../class_cut_ellipsoid.html#aedef6b2ff0039d457490f216db6363e2',1,'CutEllipsoid::ycenter()'],['../class_cut_sphere.html#adf21bbf750b8e318db9a02786881542e',1,'CutSphere::ycenter()'],['../class_put_ellipsoid.html#a3020ba6a4020b25173756101b33e07ac',1,'PutEllipsoid::ycenter()'],['../class_put_sphere.html#a2273d70cbc731c9521d6212248f8e807',1,'PutSphere::ycenter()']]]
 ];

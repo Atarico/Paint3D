@@ -1,9 +1,9 @@
 var searchData=
 [
   ['paint3d',['Paint3D',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['paintevent',['paintEvent',['../class_plotter.html#a06477bf987646f000a8982db1352a11d',1,'Plotter::paintEvent()'],['../class_plotter3d.html#ac688c7af41aef0809d0f73318026f15e',1,'Plotter3d::paintEvent()']]],
+  ['paintevent',['paintEvent',['../classcolor_display.html#a0cf7e255f097c11978a38ebc6efcbc31',1,'colorDisplay::paintEvent()'],['../class_plotter.html#a06477bf987646f000a8982db1352a11d',1,'Plotter::paintEvent()'],['../class_plotter3d.html#ac688c7af41aef0809d0f73318026f15e',1,'Plotter3d::paintEvent()']]],
   ['paintmatrix',['paintMatrix',['../class_plotter.html#ae31e87461884e307ec68e9374aef6a83',1,'Plotter']]],
-  ['paintmatrix3d',['paintMatrix3D',['../class_plotter3d.html#a593ab1162b4d7f2b22f82df3df12ccbe',1,'Plotter3d']]],
+  ['paintmatrix3d',['paintMatrix3D',['../class_plotter3d.html#a8b9a27cad0fc7a8e8ab54c4546913fc6',1,'Plotter3d']]],
   ['plane3d',['plane3D',['../class_sculptor.html#ab1a6f66c1a09f37c0b34380eb2a5fbb7',1,'Sculptor']]],
   ['planexy',['planeXY',['../class_sculptor.html#a65bfdea71653536a88a2053d679259e2',1,'Sculptor']]],
   ['planexz',['planeXZ',['../class_sculptor.html#a6b643d3e9bf58317ef9063987edf2670',1,'Sculptor']]],
