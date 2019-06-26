@@ -19,17 +19,13 @@ Após a clonagem, abra o arquivo Paint3D.pro com o Qt Creator e compile o projet
 
 Após a compilação do projeto, basta executá-lo para interagir com a interface gráfica:
 
-```diff
--Imagem de toda a aplicação-
-```
+![Interface](/img/Paint3dprogram.jpeg?raw=true "Interface")
 
 ### Novas Matrizes de Desenho
 
 A aplicação inicia com uma matriz de desenho de 10x10x10 voxels. Mas o usuário pode iniciar uma nova matriz de desenho com outras dimensões em File>New 3D Canvas. **ATENÇÃO!** fazer isso irá permanentemente destruir qualquer matriz de desenho previamente em uso, incluindo seu conteúdo já desenhado, portanto recomendamos cuidado.
 
-```diff
--Imagem do popup de nova matriz de desenho-
-```
+![Novo Canvas](/img/Paint3dnewcanvas.jpeg?raw=true "Nova Matriz de Desenho")
 
 ### Interface
 
@@ -60,16 +56,12 @@ Para auxiliar o usuário, abaixo dos botões existe uma série de 3 displays com
 
 Ao lado dos displays, existe o selecionador de cor, onde o usuário pode selecionar a cor desejada tanto por meio dos quatro sliders RGBA, ou clicando no botão "color" para abrir o pop-up de seleção de cor.
 
-```diff
--Imagem do popup de seleção de cor-
-```
+![Color Picker](/img/Paint3dcolorpicker.jpeg?raw=true "Selecionador de Cor")
 
 Ao lado do seletor de cores há os parâmetros para se desenhar um retângulo, esfera e elipse (lembre-se que os parâmetros servem tanto para os botões de desenhar quanto para os de apagar).
 Com a cor e a ferramenta de desenho desejada selecionada, basta clicar e arrastar com o botão esquerdo em um dos três planos de desenho para começar a desenhar sua figura.
 
-```diff
--Imagem de alguma figura desenhada-
-```
+![Drawing Example](/img/Paint3dminecraftexample.jpeg?raw=true "Exemplo de Desenho")
 
 ### Salvando em formato .off
 
