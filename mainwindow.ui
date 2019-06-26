@@ -853,7 +853,7 @@
      <x>0</x>
      <y>0</y>
      <width>1195</width>
-     <height>22</height>
+     <height>17</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -894,6 +894,10 @@
    <property name="checked">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="imagem.qrc">
+     <normaloff>:/imagem/img/cubocheio.png</normaloff>:/imagem/img/cubocheio.png</iconset>
+   </property>
    <property name="text">
     <string>putvoxel</string>
    </property>
@@ -901,6 +905,10 @@
   <action name="actioncutvoxel">
    <property name="checkable">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="imagem.qrc">
+     <normaloff>:/imagem/img/cubovazio.png</normaloff>:/imagem/img/cubovazio.png</iconset>
    </property>
    <property name="text">
     <string>cutvoxel</string>
@@ -910,6 +918,10 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="imagem.qrc">
+     <normaloff>:/imagem/img/paralelepdedo colorido.png</normaloff>:/imagem/img/paralelepdedo colorido.png</iconset>
+   </property>
    <property name="text">
     <string>putbox</string>
    </property>
@@ -917,6 +929,10 @@
   <action name="actioncutbox">
    <property name="checkable">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="imagem.qrc">
+     <normaloff>:/imagem/img/paraleleppedovazio.jpg</normaloff>:/imagem/img/paraleleppedovazio.jpg</iconset>
    </property>
    <property name="text">
     <string>cutbox</string>
@@ -926,6 +942,10 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="imagem.qrc">
+     <normaloff>:/imagem/img/efera.jpg</normaloff>:/imagem/img/efera.jpg</iconset>
+   </property>
    <property name="text">
     <string>putsphere</string>
    </property>
@@ -933,6 +953,10 @@
   <action name="actioncutsphere">
    <property name="checkable">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="imagem.qrc">
+     <normaloff>:/imagem/img/eferaoca.png</normaloff>:/imagem/img/eferaoca.png</iconset>
    </property>
    <property name="text">
     <string>cutsphere</string>
@@ -942,6 +966,10 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="imagem.qrc">
+     <normaloff>:/imagem/img/elipsoidecolorido.jpg</normaloff>:/imagem/img/elipsoidecolorido.jpg</iconset>
+   </property>
    <property name="text">
     <string>putellipsoid</string>
    </property>
@@ -950,6 +978,10 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="imagem.qrc">
+     <normaloff>:/imagem/img/elipsoidevazio.png</normaloff>:/imagem/img/elipsoidevazio.png</iconset>
+   </property>
    <property name="text">
     <string>cutellipsoid</string>
    </property>
@@ -957,6 +989,10 @@
   <action name="actionwriteOFF">
    <property name="checkable">
     <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="imagem.qrc">
+     <normaloff>:/imagem/img/diqkete.jpg</normaloff>:/imagem/img/diqkete.jpg</iconset>
    </property>
    <property name="text">
     <string>Save as .off</string>
@@ -992,6 +1028,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="imagem.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/imagem">
+        <file>img/cubocheio.png</file>
+        <file>img/cubovazio.png</file>
+        <file>img/diqkete.jpg</file>
+        <file>img/efera.jpg</file>
+        <file>img/eferaazul.jpg</file>
+        <file>img/eferaoca.png</file>
+        <file>img/eferaoca3.png</file>
+        <file>img/elipsoidecolorido.jpg</file>
+        <file>img/elipsoidevazio.png</file>
+        <file>img/Esfera.svg</file>
+        <file>img/paralelepdedo colorido.png</file>
+        <file>img/paraleleppedovazio.jpg</file>
+        <file>img/Sphere_-_Esfera.svg</file>
+    </qresource>
+</RCC>

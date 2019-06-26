@@ -47,3 +47,6 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     dialognewcanvas.ui
+
+RESOURCES += \
+    imagem.qrc
