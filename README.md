@@ -10,7 +10,7 @@ Paint3D é uma aplicação Desktop desenvolvida em C++ com o framework gráfico 
 
 Clone o repositório através do GitHub ou através do terminal:
 ```git
-git clone https://github.com/Atarico/Paint3D.git
+git clone https://github.com/lpdcalves/Paint3D.git
 ```
 
 Após a clonagem, abra o arquivo Paint3D.pro com o Qt Creator e compile o projeto.
