@@ -2,6 +2,8 @@
 
 Paint3D é uma aplicação Desktop desenvolvida em C++ com o framework gráfico Qt que permite o desenho de objetos tridimensionais utilizando Voxels. Atualmente, o único formato de arquivo suportado pela aplicação é `.off `.
 
+![Drawing Example](/img/Paint3dminecraftexample.jpeg?raw=true "Exemplo de Desenho")
+
 ## Pré-requisitos
 
 É necessário o [Qt Creator](https://www.qt.io/download) com uma versão do Qt 5.12.2 ou superior para compilar o projeto (não garantimos retrocompatibilidade com versões anteriores).
